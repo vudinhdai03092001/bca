@@ -42,13 +42,14 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="utility\giaban.cs" />
-    <Compile Include="utility\hanghoa.cs" />
-    <Compile Include="utility\hoadonban.cs" />
-    <Compile Include="utility\hoadonnhap.cs" />
-    <Compile Include="utility\NCC.cs" />
-    <Compile Include="utility\nhanvien.cs" />
-    <Compile Include="utility\tinhluong.cs" />
+    <Compile Include="entities\giaban.cs" />
+    <Compile Include="entities\hanghoa.cs" />
+    <Compile Include="entities\hoadonban.cs" />
+    <Compile Include="entities\hoadonnhap.cs" />
+    <Compile Include="entities\NCC.cs" />
+    <Compile Include="entities\nhanvien.cs" />
+    <Compile Include="entities\tinhluong.cs" />
+    <Compile Include="utility\dangnhap.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
