@@ -16,7 +16,6 @@ namespace doann.utility
             mahdb = 0;
             ngayban=new DateTime();
             tongtien = 0;
-            
         }
         public hoadonban(int mahdb1, DateTime ngayban1, double tongtien1)
         {
