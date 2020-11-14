@@ -1,0 +1,2 @@
+C:\Users\Admin\Desktop\bca\DA\doann\obj\Debug\doann.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\bca\DA\doann\obj\Debug\doann.csproj.CoreCompileInputs.cache

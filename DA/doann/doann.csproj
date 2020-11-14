@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="businesslayer\IhoadonbanBLL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="entities\giaban.cs" />
@@ -50,6 +51,9 @@
     <Compile Include="entities\nhanvien.cs" />
     <Compile Include="entities\tinhluong.cs" />
     <Compile Include="utility\dangnhap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dataccesslayer\interface\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

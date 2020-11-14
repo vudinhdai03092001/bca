@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace doann.utility
+namespace doann.entities
 {
     class NCC
     {
