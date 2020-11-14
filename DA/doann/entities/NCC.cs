@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace doann.entities
+namespace doann.Entities
 {
     class NCC
     {
@@ -19,6 +19,14 @@ namespace doann.entities
             diachi = "";
             sdt = 0;
         }
+        public NCC(NCC ncc)
+        {
+            this.mancc = ncc.mancc;
+            this.tenncc = ncc.tenncc;
+            this.diachi = ncc.diachi;
+            this.sdt = ncc.sdt;
+        }
+
         public NCC(int mancc1, string tenncc1, string diachi1, int sdt1)
         {
             mancc1 = mancc;

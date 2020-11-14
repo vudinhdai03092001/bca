@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace doann.entities
+namespace doann.Entities
 {
     class hoadonban
     {
@@ -23,6 +23,7 @@ namespace doann.entities
             this.ngayban = hd.ngayban;
             this.tongtien = hd.tongtien;
         }
+        
         public hoadonban(int mahdb1, DateTime ngayban1, double tongtien1)
         {
             mahdb = mahdb1;

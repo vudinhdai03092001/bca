@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace doann.entities
+namespace doann.Entities
 {
     class hanghoa
     {
@@ -25,6 +25,14 @@ namespace doann.entities
             tenhang1 = tenhang;
             slnhap1 = slnhap;
             slhienco1 = slhienco;
+        }
+        public hanghoa(hanghoa hh)
+        {
+            this.mahang = hh.mahang;
+            this.tenhang = hh.tenhang;
+            this.slnhap = hh.slnhap;
+            this.slhienco = hh.slhienco;
+
         }
         public void nhap()
         {

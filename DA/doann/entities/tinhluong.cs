@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace doann.entities
+namespace doann.Entities
 {
     class tinhluong
     {
@@ -19,6 +19,15 @@ namespace doann.entities
             thuong = 0;
             luongcoban = 0;
             thanhtien = 0;
+        }
+        public tinhluong(tinhluong tl)
+        {
+            this.matl = tl.matl;
+            this.songaylv = tl.songaylv;
+            this.thuong = tl.thuong;
+            this.luongcoban = tl.luongcoban;
+            this.thanhtien = tl.thanhtien;
+
         }
         public tinhluong(int matl1, float songaylv1, double thuong1, double luongcoban1,double thanhtien1)
         {

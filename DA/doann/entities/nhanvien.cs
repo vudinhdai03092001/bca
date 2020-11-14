@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace doann.entities
+namespace doann.Entities
 {
     class nhanvien
     {
@@ -18,9 +18,17 @@ namespace doann.entities
             gioitinh = "";
             loainv = "";
             ngaysinh = new DateTime();
-
             ngayvaolv = new DateTime();
         }
+        public nhanvien(nhanvien nv)
+        {
+            this.mannv = nv.mannv;
+            this.gioitinh = nv.gioitinh;
+            this.loainv = nv.loainv;
+            this.ngaysinh = nv.ngaysinh;
+            this.ngayvaolv = nv.ngayvaolv;
+        }
+
         public nhanvien(int mannv1, string gioitinh1, string loainv1, DateTime ngaysinh1,DateTime ngayvaolv1)
         {
             mannv1 = mannv;

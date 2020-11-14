@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace doann.entities
+namespace doann.Entities
 {
     class giaban
     {
@@ -17,6 +17,13 @@ namespace doann.entities
             gia = 0;
             donvitinh = "";
             
+        }
+        public giaban(giaban gb)
+        {
+            this.magiaban = gb.magiaban;
+            this.gia = gb.gia;
+            this.donvitinh = gb.donvitinh;
+
         }
         public giaban(int magiaban1,double gia1, string donvitinh1)
         {

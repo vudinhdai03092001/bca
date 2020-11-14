@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace doann.entities
+namespace doann.Entities
 {
     class hoadonnhap
     {
@@ -21,6 +21,16 @@ namespace doann.entities
             ngaynhan = new DateTime();
             tongtien = 0;
             thanhtoan = 0;
+
+        }
+        public hoadonnhap(hoadonnhap hdn)
+        {
+            this.mahdn = hdn.mahdn;
+            this.nvgiao = hdn.nvgiao;
+            this.manvnhap = hdn.manvnhap;
+            this.ngaynhan = hdn.ngaynhan;
+            this.tongtien = hdn.tongtien;
+            this.thanhtoan = hdn.thanhtoan;
 
         }
         public hoadonnhap(int mahdn1, string nvgiao1, int manvnhap1, DateTime ngaynhan1,double tongtien1,double thanhtoan1)
