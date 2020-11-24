@@ -56,6 +56,13 @@
     <Compile Include="DataAccessLayer\Interface\INCC_DAL.cs" />
     <Compile Include="DataAccessLayer\Interface\InhanvienDAL.cs" />
     <Compile Include="DataAccessLayer\Interface\ItinhluongDAL.cs" />
+    <Compile Include="presenation\frmgiaban.cs" />
+    <Compile Include="presenation\frmhanghoa.cs" />
+    <Compile Include="presenation\frmhoadonban.cs" />
+    <Compile Include="presenation\frmhoadonnhan.cs" />
+    <Compile Include="presenation\frmNCC.cs" />
+    <Compile Include="presenation\frmnhanvien.cs" />
+    <Compile Include="presenation\frmtinhluong.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\giaban.cs" />

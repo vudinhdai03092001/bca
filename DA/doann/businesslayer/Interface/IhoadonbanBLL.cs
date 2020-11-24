@@ -7,7 +7,7 @@ using doann.Entities;
 
 namespace doann.businesslayer.Interface
 {
-     public interface IhoadonbanBLL
+      interface IhoadonbanBLL
     {
         List<hoadonban> GetAllhoadonban();
         void themhoadonban(hoadonban hd);
