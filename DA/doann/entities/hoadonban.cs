@@ -5,7 +5,7 @@ using System.Text;
 
 namespace doann.Entities
 {
-    class hoadonban
+   public class hoadonban
     {
         private int mahdb { get => mahdb; set => mahdb = value; }
         private double tongtien { get => tongtien; set => tongtien = value; }

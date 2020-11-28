@@ -5,7 +5,7 @@ using System.Text;
 
 namespace doann.Entities
 {
-    class NCC
+   public class NCC
     {
 
         private int mancc { get => mancc; set => mancc = value; }

@@ -72,7 +72,8 @@
     <Compile Include="Entities\NCC.cs" />
     <Compile Include="Entities\nhanvien.cs" />
     <Compile Include="Entities\tinhluong.cs" />
-    <Compile Include="Utility\dangnhap.cs" />
+    <Compile Include="Utility\congcu.cs" />
+    <Compile Include="Utility\List.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

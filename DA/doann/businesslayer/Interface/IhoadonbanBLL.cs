@@ -5,9 +5,9 @@ using System.Text;
 using doann.Utility;
 using doann.Entities;
 
-namespace doann.businesslayer.Interface
+namespace doann.businesslayer
 {
-      interface IhoadonbanBLL
+    public  interface IhoadonbanBLL
     {
         List<hoadonban> GetAllhoadonban();
         void themhoadonban(hoadonban hd);

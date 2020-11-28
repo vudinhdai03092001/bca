@@ -5,7 +5,7 @@ using System.Text;
 
 namespace doann.Entities
 {
-    class giaban
+   public class giaban
     {
         private int magiaban { get => magiaban; set => magiaban = value; }
         private double gia { get => gia; set => gia = value; }

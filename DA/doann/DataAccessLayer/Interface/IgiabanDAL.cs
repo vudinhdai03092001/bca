@@ -7,7 +7,7 @@ using doann.Entities;
 
 namespace doann.DataAccessLayer.Interface
 { //Xác định các yêu cầu cần phải thao tác với cơ sở dữ liệu để phục vụ cho phần xử lý nghiệp vụ
-    interface IgiabanDAL
+    public interface IgiabanDAL
     {
         List<giaban> GetAllgiaban();
         void themgiaban(giaban gb);

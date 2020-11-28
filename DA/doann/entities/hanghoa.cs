@@ -5,7 +5,7 @@ using System.Text;
 
 namespace doann.Entities
 {
-    class hanghoa
+   public class hanghoa
     {
         private string mahang { get => mahang; set => mahang = value; }
         private string tenhang { get => tenhang; set => tenhang = value; }
