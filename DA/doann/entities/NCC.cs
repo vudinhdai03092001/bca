@@ -8,13 +8,62 @@ namespace doann.Entities
    public class NCC
     {
 
-        private int mancc { get => mancc; set => mancc = value; }
-        private string tenncc { get => tenncc; set => tenncc = value; }
-        private string diachi { get => diachi; set => diachi = value; }
-        private int sdt { get => mancc; set => mancc = value; }
+        private string mancc;
+        private string tenncc;
+        private string diachi;
+        private int sdt;
+        public string Mancc
+        {
+            get
+            {
+                return mancc;
+            }
+            set
+            {
+                if (value !="")
+                    mancc = value;
+            }
+        }
+        public string Tenncc
+        {
+            get
+            {
+                return tenncc;
+            }
+            set
+            {
+                if (value !="")
+                    tenncc = value;
+            }
+        }
+        public string Diachi
+        {
+            get
+            {
+                return diachi;
+            }
+            set
+            {
+                if (value !="")
+                    diachi = value;
+            }
+        }
+        public int Sdt
+        {
+            get
+            {
+                return sdt;
+            }
+            set
+            {
+                if (value > 0)
+                    sdt = value;
+            }
+        }
+
         public NCC()
         {
-            mancc = 0;
+            mancc = "";
             tenncc = "";
             diachi = "";
             sdt = 0;
@@ -27,7 +76,7 @@ namespace doann.Entities
             this.sdt = ncc.sdt;
         }
 
-        public NCC(int mancc1, string tenncc1, string diachi1, int sdt1)
+        public NCC(string mancc1, string tenncc1, string diachi1, int sdt1)
         {
             mancc1 = mancc;
             tenncc1 = tenncc;

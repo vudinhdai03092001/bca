@@ -7,14 +7,74 @@ namespace doann.Entities
 {
    public class nhanvien
     {
-        private int mannv { get => mannv; set => mannv = value; }
-        private string gioitinh { get => gioitinh; set => gioitinh = value; }
-        private string loainv { get => loainv; set => loainv = value; }
-        private DateTime ngaysinh { get => ngaysinh; set => ngaysinh = value; }
-        private DateTime ngayvaolv { get => ngayvaolv; set => ngayvaolv = value; }
+        private string mannv;
+        private string gioitinh;
+        private string loainv;
+        private DateTime ngaysinh;
+        private DateTime ngayvaolv;
+        public string Mannv
+        {
+            get
+            {
+                return mannv;
+            }
+            set
+            {
+                if (value!="")
+                    mannv = value;
+            }
+        }
+        public string Gioitinh
+        {
+            get
+            {
+                return gioitinh;
+            }
+            set
+            {
+                if (value !="")
+                    gioitinh = value;
+            }
+        }
+        public string Loainv
+        {
+            get
+            {
+                return loainv;
+            }
+            set
+            {
+                if (value !="")
+                    loainv = value;
+            }
+        }
+        public DateTime Ngaysinh
+        {
+            get
+            {
+                return ngaysinh;
+            }
+            set
+            {
+               
+                    ngaysinh= value;
+            }
+        }
+        public DateTime Ngayvaolv
+        {
+            get
+            {
+                return ngayvaolv;
+            }
+            set
+            {
+ 
+                    ngayvaolv = value;
+            }
+        }
         public nhanvien()
         {
-            mannv = 0;
+            mannv = "";
             gioitinh = "";
             loainv = "";
             ngaysinh = new DateTime();
@@ -29,7 +89,7 @@ namespace doann.Entities
             this.ngayvaolv = nv.ngayvaolv;
         }
 
-        public nhanvien(int mannv1, string gioitinh1, string loainv1, DateTime ngaysinh1,DateTime ngayvaolv1)
+        public nhanvien(string mannv1, string gioitinh1, string loainv1, DateTime ngaysinh1,DateTime ngayvaolv1)
         {
             mannv1 = mannv;
             gioitinh1 = gioitinh;

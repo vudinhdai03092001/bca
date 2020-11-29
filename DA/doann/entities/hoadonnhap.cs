@@ -7,21 +7,80 @@ namespace doann.Entities
 {
    public class hoadonnhap
     {
-        private int mahdn { get => mahdn; set => mahdn = value; }
-        private string nvgiao { get => nvgiao; set => nvgiao = value; }
-        private int manvnhap { get => manvnhap; set => manvnhap = value; }
-        private DateTime ngaynhan { get => ngaynhan; set => ngaynhan = value; }
-        private double tongtien { get => tongtien; set => tongtien = value; }
-        private double thanhtoan { get => thanhtoan; set => thanhtoan = value; }
+        private string mahdn;
+        private string nvgiao;
+        private string manvnhap;
+        private DateTime ngaynhan;
+        private double gianhap;
+        public string Mahdn
+        {
+            get
+            {
+                return mahdn;
+            }
+            set
+            {
+                if (value !="")
+                    mahdn= value;
+            }
+        }
+        public string Nvgiao
+        {
+            get
+            {
+                return nvgiao;
+            }
+            set
+            {
+                if (value != "")
+                    nvgiao = value;
+            }
+
+        }
+        public string Manvnhap
+        {
+            get
+            {
+                return manvnhap;
+            }
+            set
+            {
+                if (value !="")
+                    manvnhap= value;
+            }
+        }
+        public DateTime Ngaynhan
+        {
+            get
+            {
+                return ngaynhan;
+            }
+            set
+            {
+                ngaynhan = value;
+            }
+
+        }
+        public double Gianhap
+        {
+            get
+            {
+                return gianhap;
+            }
+            set
+            {
+                if (value > 0)
+                    gianhap = value;
+            }
+        }
         public hoadonnhap()
         {
-            mahdn = 0;
+            mahdn = "";
             nvgiao = "";
-            manvnhap = 0;
+            manvnhap = "";
             ngaynhan = new DateTime();
-            tongtien = 0;
-            thanhtoan = 0;
-
+            gianhap = 0;
+          
         }
         public hoadonnhap(hoadonnhap hdn)
         {
@@ -29,18 +88,18 @@ namespace doann.Entities
             this.nvgiao = hdn.nvgiao;
             this.manvnhap = hdn.manvnhap;
             this.ngaynhan = hdn.ngaynhan;
-            this.tongtien = hdn.tongtien;
-            this.thanhtoan = hdn.thanhtoan;
-
+            this.gianhap = hdn.gianhap;
         }
-        public hoadonnhap(int mahdn1, string nvgiao1, int manvnhap1, DateTime ngaynhan1,double tongtien1,double thanhtoan1)
+        public hoadonnhap(string mahdn1, string nvgiao1, string manvnhap1, DateTime ngaynhan1,double gianhap1)
         {
             mahdn1 = mahdn;
             nvgiao1 = nvgiao;
             manvnhap1 = manvnhap;
             ngaynhan1 = ngaynhan;
-            tongtien1 = tongtien;
-            thanhtoan1 = thanhtoan;
+            gianhap1 = gianhap;
+            
+ 
+           
 
         }
     }

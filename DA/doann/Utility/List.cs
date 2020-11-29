@@ -5,172 +5,123 @@ using System.Text;
 
 namespace doann.Utility
 {
+   //tao 1 node dang tong quát với kiểu dữ liệu là T
     public class Node<T>
     {
-        private T info;
-        private Node<T> link;
-        public T Info
+        private T data;
+
+        public T Data
         {
-            get
-            {
-                return info;
-            }
-            set
-            {
-                info = value;
-            }
+            get { return data; }
+            set { data = value; }
         }
+        private Node<T> link;
+
         public Node<T> Link
         {
-            get
-            {
-                return link;
-            }
-            set
-            {
-                link = value;
-            }
+            get { return link; }
+            set { link = value; }
         }
-        public Node()
-        { }
+        public Node() { }
         public Node(T t)
         {
-            info = t;
+            data = t;
             link = null;
         }
     }
     public class List<T>
     {
+        //con tro cua danh sach lien ket
         private Node<T> head;
+
         public Node<T> Head
         {
-            get
-            {
-                return head;
-            }
-            set
-            {
-                head = value;
-            }
+            get { return head; }
+            set { head = value; }
         }
         public List()
         {
             head = null;
         }
-        public T this[int i]
+        public void AddHead(T n)
         {
-            get
-            {
-                Node<T> tg = head;
-                int d = 0;
-                while (tg.Link != null && d != i)
-                {
-                    tg = tg.Link;
-                    d++;
-                }
-                return tg.Info;
-            }
+            Node<T> tg = new Node<T>(n);
+            tg.Link = head;
+            head = tg;
         }
-        public int Count
+        public void AddTail(T x)
         {
-            get
+            Node<T> t = new Node<T>(x);
+            if (head == null) head = t;
+            else
             {
-                if (head == null)
-                    return 0;
                 Node<T> tg = head;
-                int d = 0;
                 while (tg.Link != null)
                 {
                     tg = tg.Link;
-                    d++;
                 }
-                return d + 1;
+                tg.Link = t;
             }
         }
-        public void Add(T x)
+        public void Hien()
         {
-            Node<T> tg = new Node<T>(x);
+            Node<T> tg = head;
+            Console.WriteLine("cac phan tu cua danh sach:");
+            while (tg != null)
+            {
+                Console.WriteLine("\t" + tg.Data);
+                tg = tg.Link;
+            }
+            Console.WriteLine();
+        }
+        public void RemoveTail()
+        {
             if (head == null)
-                head = tg;
+            {
+                Console.WriteLine("danh sach rong");
+                return;
+            }
+            else
+                if (head.Link == null)
+            {
+                head = null;
+            }
             else
             {
-                Node<T> p = head;
-                while (p.Link != null)
-                    p = p.Link;
-                p.Link = tg;
+
+                Console.WriteLine("danh sach da duoc xoa di phan tu cuoi:");
+                Node<T> tg = head;
+                Node<T> t = tg;
+                while (tg.Link != null)
+                {
+                    t = tg;
+                    tg = tg.Link;
+                }
+                t.Link = null;
             }
         }
-        public void Add(T x, int i)
+        public void Xoaq(Node<T> q)
         {
-            Node<T> tg = new Node<T>(x);
-            if (Count == 0)
-                head = tg;
-            else if (i >= 0 && i <= Count - 1)
+            Node<T> tg = head;
+            Node<T> t = tg;
+            while (tg.Link != null)
             {
-                Node<T> p = head;
-                int d = 0;
-                while (p.Link != null && d != i)
-                {
-                    p = p.Link;
-                    d++;
-                }
-                if (p == head)
-                {
-                    tg.Link = head;
-                    head = tg;
-                }
+                if (tg == q) break;
                 else
                 {
-                    Node<T> vt = head;
-                    Node<T> tvt = vt;
-                    while (vt != p)
-                    {
-                        tvt = vt;
-                        vt = vt.Link;
-                    }
-                    tg.Link = vt;
-                    tvt.Link = tg;
+                    t = tg;
+                    tg = tg.Link;
                 }
             }
-        }
-        public void RemoveAt(int i)
-        {
-            if (Count == 0)
-                return;
-            else if (i >= 0 && i <= Count - 1)
+            if (q == head) head = head.Link;//q la dau danh sach
+            else
             {
-                Node<T> p = head;
-                int d = 0;
-                while (p.Link != null && d != i)
-                {
-                    p = p.Link;
-                    d++;
-                }
-                if (head.Link == null)
-                    head = null;
-                else if (p == head)
-                    head = head.Link;
-                else if (p.Link == null)
-                {
-                    Node<T> tg = head;
-                    while (tg.Link.Link != null)
-                        tg = tg.Link;
-                    tg.Link = null;
-                }
+                if (q.Link == null)
+                    t.Link = null;
                 else
-                {
-                    Node<T> vt = head;
-                    Node<T> tvt = vt;
-                    while (vt != p)
-                    {
-                        tvt = vt;
-                        vt = vt.Link;
-                    }
-                    tvt.Link = vt.Link;
-                }
+                    t.Link = q.Link;
             }
         }
     }
 }
-
 

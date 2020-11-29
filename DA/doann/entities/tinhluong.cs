@@ -7,14 +7,76 @@ namespace doann.Entities
 {
     class tinhluong
     {
-        private int matl { get => matl; set => matl = value; }
-        private float songaylv { get => songaylv; set => songaylv = value; }
-        private double thuong { get => thuong; set => thuong = value; }
-        private double luongcoban { get => luongcoban; set => luongcoban = value; }
-        private double thanhtien { get => thanhtien; set => thanhtien = value; }
+        private string matl;
+        private float songaylv;
+        private double thuong;
+        private double luongcoban;
+        private double thanhtien;
+        public string Matl
+        {
+            get
+            {
+                return matl;
+            }
+            set
+            {
+                if (value !="")
+                    matl = value;
+            }
+        }
+        public float Songaylv
+        {
+            get
+            {
+                return songaylv;
+            }
+            set
+            {
+                if (value > 0)
+                  songaylv = value;
+            }
+        }
+        public double Thuong
+        {
+            get
+            {
+                return thuong;
+            }
+            set
+            {
+                if (value > 0)
+                    thuong = value;
+            }
+
+        }
+        public double Luongcoban
+        {
+            get
+            {
+                return luongcoban;
+            }
+            set
+            {
+                if (value > 0)
+                    luongcoban = value;
+            }
+        }
+        public double Thanhtien
+        {
+            get
+            {
+                return songaylv * luongcoban + thuong;
+            }
+            set
+            {
+            
+                    thanhtien = value;
+            }
+        }
+
         public tinhluong()
         {
-            matl = 0;
+            matl = "";
             songaylv = 0;
             thuong = 0;
             luongcoban = 0;
@@ -29,7 +91,7 @@ namespace doann.Entities
             this.thanhtien = tl.thanhtien;
 
         }
-        public tinhluong(int matl1, float songaylv1, double thuong1, double luongcoban1,double thanhtien1)
+        public tinhluong(string matl1, float songaylv1, double thuong1, double luongcoban1,double thanhtien1)
         {
             matl1 = matl;
             songaylv1 = songaylv;

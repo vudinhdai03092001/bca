@@ -7,10 +7,58 @@ namespace doann.Entities
 {
    public class hanghoa
     {
-        private string mahang { get => mahang; set => mahang = value; }
-        private string tenhang { get => tenhang; set => tenhang = value; }
-        private int slnhap { get => slnhap; set => slnhap = value; }
-        private int slhienco { get => slhienco; set => slhienco = value; }
+        private string mahang;
+        private string tenhang;
+        private int slnhap;
+        private int slhienco;
+        public string Mahang
+        {
+            get
+            {
+                return mahang;
+            }
+            set
+            {
+                if (value !="")
+                    mahang = value;
+            }
+        }
+        public string Tenhang
+        {
+            get
+            {
+                return tenhang;
+            }
+            set
+            {
+                if (value !="")
+                    tenhang = value;
+            }
+        }
+        public int Slnhap
+        {
+            get
+            {
+                return slnhap;
+            }
+            set
+            {
+                if (value > 0)
+                    slnhap= value;
+            }
+        }
+        public int Slhienco
+        {
+            get
+            {
+                return slhienco;
+            }
+            set
+            {
+                if (value > 0)
+                    slhienco= value;
+            }
+        }
         public hanghoa()
         {
             mahang = "";
@@ -33,15 +81,7 @@ namespace doann.Entities
             this.slnhap = hh.slnhap;
             this.slhienco = hh.slhienco;
 
-        }
-        public void nhap()
-        {
-            Console.Write("nhập mã hàng hóa :"); mahang = Console.ReadLine();
-            Console.Write("nhập tên hàng:"); tenhang = Console.ReadLine();
-            Console.Write("số lượng nhập :"); slnhap = int.Parse(Console.ReadLine());
-            Console.Write("số lượng hiện có :"); slhienco = int.Parse(Console.ReadLine());
-        }
-
+        }       
     }
 }
         

@@ -7,28 +7,62 @@ namespace doann.Entities
 {
    public class hoadonban
     {
-        private int mahdb { get => mahdb; set => mahdb = value; }
-        private double tongtien { get => tongtien; set => tongtien = value; }
-        private DateTime ngayban { get => ngayban; set => ngayban = value; }
-        
+        private string mahdb;
+        private double giaban;
+        private DateTime ngayban;   
+        public string Mahdb
+        {
+            get
+            {
+                return mahdb;
+            }
+            set
+            {
+                if (value != "")
+                    mahdb = value;
+            }
+        }
+        public double Giaban
+        {
+            get
+            {
+                return giaban;
+            }
+            set
+            {
+                if (value >0)
+                  giaban = value;
+            }
+        }
+        public DateTime Ngayban
+        {
+            get
+            {
+                return Ngayban;
+            }
+            set
+            {
+
+                Ngayban = value;
+            }
+        }
         public hoadonban()
         {
-            mahdb = 0;
+            mahdb = "";
             ngayban=new DateTime();
-            tongtien = 0;
+            giaban = 0;
         }
         public hoadonban(hoadonban hd)
         {
             this.mahdb = hd.mahdb;
             this.ngayban = hd.ngayban;
-            this.tongtien = hd.tongtien;
-        }
-        
-        public hoadonban(int mahdb1, DateTime ngayban1, double tongtien1)
+            this.giaban = hd.giaban;
+        }        
+        public hoadonban(string mahdb1, DateTime ngayban1, double giaban1   )
         {
             mahdb = mahdb1;
             ngayban = ngayban1;
-            tongtien = tongtien1;
+            giaban = giaban1;
     }
 }
         

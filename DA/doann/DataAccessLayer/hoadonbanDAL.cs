@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using doann.Utility;
 using System.IO;
 using doann.Entities;
-using doann.DataAccessLayer.Interface;
-using System.Text.RegularExpressions;
+
 
 namespace doann.DataAccessLayer
 {
@@ -23,9 +21,9 @@ namespace doann.DataAccessLayer
             {
                 if (s != "")
                 {
-                    s = CongCu.CatXau(s);
+                    
                     string[] a = s.Split('#');
-                    list.Add(new hoadonban(int.Parse(a[0]), DateTime.Parse(a[1]), double.Parse(a[2])));
+                    list.Add(new hoadonban(a[0], DateTime.Parse(a[1]), double.Parse(a[2])));
                 }
                 s = fread.ReadLine();
             }
@@ -35,10 +33,10 @@ namespace doann.DataAccessLayer
         //Chèn một bản ghi học sinh vào tệp
         public void themhoadonban(hoadonban hd)
         {
-            int maHDB = CongCu.TachSo(mahdb) + 1;
+            string mahdb = DateTime.Now.ToString("tt");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
-            fwrite.Write("hd" + mahdb + "#" + hd.ngayban+);
+            fwrite.Write( mahdb + "#" + hd.Mahdb+"#"+hd.Giaban+"#"+hd.Ngayban);
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
@@ -46,7 +44,7 @@ namespace doann.DataAccessLayer
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)
-                fwrite.WriteLine(list[i].mahdb + "#" + list[i].TenSanPham + "#" + list[i].DonGia);
+                fwrite.WriteLine(list[i].Mahdb + "#" + list[i].Giaban + "#" + list[i].Ngayban);
             fwrite.Close();
         }
     }
