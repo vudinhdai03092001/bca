@@ -48,6 +48,8 @@
     <Compile Include="businesslayer\Interface\INCC_BLL.cs" />
     <Compile Include="businesslayer\Interface\InhanvienBLL.cs" />
     <Compile Include="businesslayer\Interface\ItinhluongBLL.cs" />
+    <Compile Include="DataAccessLayer\giabanDAL.cs" />
+    <Compile Include="DataAccessLayer\hanghoaDAL.cs" />
     <Compile Include="DataAccessLayer\hoadonbanDAL.cs" />
     <Compile Include="DataAccessLayer\hoadonnhapDAL.cs" />
     <Compile Include="DataAccessLayer\Interface\IgiabanDAL.cs" />

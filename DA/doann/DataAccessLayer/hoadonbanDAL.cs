@@ -8,7 +8,7 @@ using doann.Entities;
 
 namespace doann.DataAccessLayer
 {
-    class hoadonbanDAL : IhoadonbanDAL
+    class hoadonbanDAL 
     {
         private string txtfile = "Data/hoadonban.txt";
         //Lấy toàn bộ dữ liệu có trong file SanPham.txt đưa vào một danh sách 

@@ -7,10 +7,10 @@ namespace doann.Entities
 {
    public class giaban
     {
-        private int magiaban;
+        private string magiaban;
         private double gia;
         private string donvitinh;
-        public int Magiaban
+        public string Magiaban
         {
             get
             {
@@ -18,7 +18,7 @@ namespace doann.Entities
             }
             set
             {
-                if (value > 0)
+                if (value !="")
                     magiaban = value;
             }
         }
@@ -48,7 +48,7 @@ namespace doann.Entities
         }
         public giaban()
         {
-            magiaban = 0;
+            magiaban = "";
             gia = 0;
             donvitinh = "";            
         }
@@ -58,7 +58,7 @@ namespace doann.Entities
             this.gia = gb.gia;
             this.donvitinh = gb.donvitinh;
         }
-        public giaban(int magiaban1,double gia1, string donvitinh1)
+        public giaban(string magiaban1,double gia1, string donvitinh1)
         {
             magiaban1 = magiaban;
             gia1 = gia;

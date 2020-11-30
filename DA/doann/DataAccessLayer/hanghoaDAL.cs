@@ -4,18 +4,17 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using doann.Entities;
-using doann.DataAccessLayer.Interface;
-
 
 namespace doann.DataAccessLayer
 {
-    class hoadonnhapDAL:IhoadonbanDAL
+    class hanghoaDAL
+
     {
-        private string txtfile = "Data/hoadonnhap.txt";
-        //Lấy toàn bộ dữ liệu có trong file SanPham.txt đưa vào một danh sách 
-        public List<hoadonnhap> GetAllhoadonnhap()
+        private string txtfile = "Data/hanghoa.txt";
+        //Lấy toàn bộ dữ liệu có trong file hanghoa.txt đưa vào một danh sách 
+        public List<hanghoa> GetAllhanghoa()
         {
-            List<hoadonnhap> list = new List<hoadonnhap>();
+            List<hanghoa> list = new List<hanghoa>();
             StreamReader fread = File.OpenText(txtfile);
             string s = fread.ReadLine();
             while (s != null)
@@ -24,7 +23,7 @@ namespace doann.DataAccessLayer
                 {
 
                     string[] a = s.Split('#');
-                    list.Add(new hoadonnhap(a[0],a[1],a[2], DateTime.Parse(a[3]), double.Parse(a[4])));
+                    list.Add(new hanghoa(a[0], a[1],int.Parse (a[2]),int.Parse(a[3])));
                 }
                 s = fread.ReadLine();
             }
@@ -32,25 +31,21 @@ namespace doann.DataAccessLayer
             return list;
         }
         //Chèn một bản ghi học sinh vào tệp
-        public void themhoadonnhap(hoadonnhap hdn)
+        public void themhoadonnhap(hanghoa hh)
         {
-            string mahdn = DateTime.Now.ToString("tt");
+            string mahang = DateTime.Now.ToString("tt");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
-            fwrite.Write(mahdn + "#" + hdn.Mahdn + "#" + hdn.Nvgiao + "#" + hdn.Manvnhap + "#" +hdn.Ngaynhan+ "#" + hdn.Gianhap);
+            fwrite.Write(mahang + "#" + hh.Mahang + "#" + hh.Tenhang + "#" + hh.Slnhap + "#" + hh.Slhienco);
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
-        public void Update(List<hoadonnhap> list)
+        public void Update(List<hanghoa> list)
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)
-                fwrite.WriteLine(list[i].Mahdn + "#" + list[i].Nvgiao + "#" + list[i].Manvnhap + "#" + list[i].Ngaynhan + "#" + list[i].Gianhap);
+                fwrite.WriteLine(list[i].Mahang + "#" + list[i].Tenhang + "#" + list[i].Slnhap + "#" + list[i].Slhienco);
             fwrite.Close();
         }
     }
 }
-
-
-    
-
