@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using doann.Entities;
+//using System.Threading.tasks;
 
 
 namespace doann.DataAccessLayer
 {
-    class hoadonbanDAL 
+    class hoadonbanDAL :IhoadonbanDAL
     {
         private string txtfile = "Data/hoadonban.txt";
-        //Lấy toàn bộ dữ liệu có trong file SanPham.txt đưa vào một danh sách 
-        public List<hoadonban> GetAllhoadonban()
+        //Lấy toàn bộ dữ liệu có trong file hoadonban.txt đưa vào một danh sách 
+        public List<hoadonban> GetHoadonbans()
         {
             List<hoadonban> list = new List<hoadonban>();
             StreamReader fread = File.OpenText(txtfile);
@@ -30,7 +31,7 @@ namespace doann.DataAccessLayer
             fread.Close();
             return list;
         }
-        //Chèn một bản ghi học sinh vào tệp
+        //Chèn một bản ghi hóa đơn bán vào tệp
         public void themhoadonban(hoadonban hd)
         {
             string mahdb = DateTime.Now.ToString("tt");

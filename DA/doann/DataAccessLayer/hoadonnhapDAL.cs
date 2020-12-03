@@ -9,10 +9,10 @@ using doann.DataAccessLayer.Interface;
 
 namespace doann.DataAccessLayer
 {
-    class hoadonnhapDAL:IhoadonbanDAL
+    class hoadonnhapDAL:IhoadonnhapDAL
     {
         private string txtfile = "Data/hoadonnhap.txt";
-        //Lấy toàn bộ dữ liệu có trong file SanPham.txt đưa vào một danh sách 
+        //Lấy toàn bộ dữ liệu có trong file hoadonnhap.txt ađưa vào một danh sách 
         public List<hoadonnhap> GetAllhoadonnhap()
         {
             List<hoadonnhap> list = new List<hoadonnhap>();
@@ -31,7 +31,7 @@ namespace doann.DataAccessLayer
             fread.Close();
             return list;
         }
-        //Chèn một bản ghi học sinh vào tệp
+        //Chèn một bản ghi hóa đơn nhập vào tệp
         public void themhoadonnhap(hoadonnhap hdn)
         {
             string mahdn = DateTime.Now.ToString("tt");

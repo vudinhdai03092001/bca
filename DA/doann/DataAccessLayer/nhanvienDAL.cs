@@ -5,47 +5,49 @@ using System.Text;
 using doann.Entities;
 using System.IO;
 
+
+
 namespace doann.DataAccessLayer
 {
-    class giabanDAL
+    class nhanvienDAL
     {
-        private string txtfile = "Data/giaban.txt";
-        //Lấy toàn bộ dữ liệu có trong file giaban.txt đưa vào một danh sách 
-        public List<giaban> GetAllgiaban()
+        private string txtfile = "Data/nhanvien.txt";
+        //lay du lieu tu nhân viên dua vao danh sach
+
+        public List<nhanvien> GetAllnhanvien()
         {
-            List<giaban> list = new List<giaban>();
+            List<nhanvien> list = new List<nhanvien>();
             StreamReader fread = File.OpenText(txtfile);
             string s = fread.ReadLine();
             while (s != null)
             {
                 if (s != "")
                 {
-
                     string[] a = s.Split('#');
-                    list.Add(new giaban(a[0], double.Parse(a[1]), a[2]));
+                    list.Add(new nhanvien(a[0],a[1],a[2],DateTime.Parse(a[3]),DateTime.Parse(a[4])));
                 }
                 s = fread.ReadLine();
             }
             fread.Close();
             return list;
         }
-        //Chèn một bản ghi giá bán vào tệp
-        public void themhoadonnhap(giaban gb)
+
+        //Chèn một bản ghi nhan viên vào tệp
+        public void Themnhanvien(nhanvien nv)
         {
-            string magiaban = DateTime.Now.ToString("tt");
+            string manv = DateTime.Now.ToString("ss");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
-            fwrite.Write(magiaban + "#" + gb.Magiaban + "#" + gb.Gia + "#" + gb.Donvitinh );
+            fwrite.Write(manv + "#" + nv.Mannv + "#" + nv.Gioitinh + "#" + nv.Loainv+"#"+nv.Ngaysinh+"#"+nv.Ngayvaolv);
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
-        public void Update(List<giaban> list)
+        public void Update(List<nhanvien> list)
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)
-                fwrite.WriteLine(list[i].Magiaban+ "#" + list[i].Gia + "#" + list[i].Donvitinh );
+                fwrite.WriteLine(list[i].Mannv + "#" + list[i].Gioitinh + "#" + list[i].Loainv + "#" + list[i].Ngaysinh+"#"+list[i].Ngayvaolv);
             fwrite.Close();
         }
     }
 }
-

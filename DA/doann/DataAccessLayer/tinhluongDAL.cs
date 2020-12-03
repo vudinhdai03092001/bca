@@ -5,47 +5,48 @@ using System.Text;
 using doann.Entities;
 using System.IO;
 
+
 namespace doann.DataAccessLayer
 {
-    class giabanDAL
+    class tinhluongDAL
     {
-        private string txtfile = "Data/giaban.txt";
-        //Lấy toàn bộ dữ liệu có trong file giaban.txt đưa vào một danh sách 
-        public List<giaban> GetAllgiaban()
+        private string txtfile = "Data/tinhluong.txt";
+        //lay du lieu tu tính lương dua vao danh sach
+
+        public List<tinhluong> GetAlltinhluong()
         {
-            List<giaban> list = new List<giaban>();
+            List<tinhluong> list = new List<tinhluong>();
             StreamReader fread = File.OpenText(txtfile);
             string s = fread.ReadLine();
             while (s != null)
             {
                 if (s != "")
                 {
-
                     string[] a = s.Split('#');
-                    list.Add(new giaban(a[0], double.Parse(a[1]), a[2]));
+                    list.Add(new tinhluong(a[0],float.Parse(a[1]),double.Parse(a[2]), double.Parse(a[3]),double.Parse(a[4])));
                 }
                 s = fread.ReadLine();
             }
             fread.Close();
             return list;
         }
-        //Chèn một bản ghi giá bán vào tệp
-        public void themhoadonnhap(giaban gb)
+
+        //Chèn một bản ghi tinh luong vào tệp
+        public void Themtinhluong(tinhluong tl)
         {
-            string magiaban = DateTime.Now.ToString("tt");
+            string matl = DateTime.Now.ToString("ss");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
-            fwrite.Write(magiaban + "#" + gb.Magiaban + "#" + gb.Gia + "#" + gb.Donvitinh );
+            fwrite.Write(matl + "#" + tl.Matl + "#" + tl.Songaylv + "#" + tl.Thuong+"#"+tl.Luongcoban+"#"+tl.Thanhtien);
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
-        public void Update(List<giaban> list)
+        public void Update(List<tinhluong> list)
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)
-                fwrite.WriteLine(list[i].Magiaban+ "#" + list[i].Gia + "#" + list[i].Donvitinh );
+                fwrite.WriteLine(list[i].Matl + "#" + list[i].Songaylv + "#" + list[i].Thuong + "#" + list[i].Luongcoban + "#" + list[i].Thanhtien);
             fwrite.Close();
         }
     }
 }
-

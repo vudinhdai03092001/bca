@@ -30,7 +30,7 @@ namespace doann.DataAccessLayer
             fread.Close();
             return list;
         }
-        //Chèn một bản ghi học sinh vào tệp
+        //Chèn một bản ghi hàng hóa vào tệp
         public void themhoadonnhap(hanghoa hh)
         {
             string mahang = DateTime.Now.ToString("tt");

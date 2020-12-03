@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using doann.Utility;
+//using doann.Utility;
 using doann.Entities;
 
 namespace doann.businesslayer
@@ -11,7 +11,7 @@ namespace doann.businesslayer
     {
         List<hoadonban> GetAllhoadonban();
         void themhoadonban(hoadonban hd);
-        void xoahoadonban(string mahdb);
+        void xoahoadonban(hoadonban mahdb);
         void suahoadonban(hoadonban hd);
         List<hoadonban> timhoadon(hoadonban hd);
     }

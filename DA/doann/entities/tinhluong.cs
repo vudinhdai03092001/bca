@@ -5,7 +5,7 @@ using System.Text;
 
 namespace doann.Entities
 {
-    class tinhluong
+   public class tinhluong
     {
         private string matl;
         private float songaylv;

@@ -7,45 +7,45 @@ using System.IO;
 
 namespace doann.DataAccessLayer
 {
-    class giabanDAL
+    class NCC_DAL:
     {
-        private string txtfile = "Data/giaban.txt";
-        //Lấy toàn bộ dữ liệu có trong file giaban.txt đưa vào một danh sách 
-        public List<giaban> GetAllgiaban()
+        private string txtfile = "Data/NCC.txt";
+        //lay du lieu tu nhà cung cấp dua vao danh sach
+
+        public List<NCC> GetAllNCC()
         {
-            List<giaban> list = new List<giaban>();
+            List<NCC> list = new List<NCC>();
             StreamReader fread = File.OpenText(txtfile);
             string s = fread.ReadLine();
             while (s != null)
             {
                 if (s != "")
                 {
-
                     string[] a = s.Split('#');
-                    list.Add(new giaban(a[0], double.Parse(a[1]), a[2]));
+                    list.Add(new NCC(a[0], a[1],a[2],int.Parse(a[3])));
                 }
                 s = fread.ReadLine();
             }
             fread.Close();
             return list;
         }
-        //Chèn một bản ghi giá bán vào tệp
-        public void themhoadonnhap(giaban gb)
+
+        //Chèn một bản ghi nhà cung cấp vào tệp
+        public void ThemNCC(NCC ncc)
         {
-            string magiaban = DateTime.Now.ToString("tt");
+            string mancc = DateTime.Now.ToString("ss");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
-            fwrite.Write(magiaban + "#" + gb.Magiaban + "#" + gb.Gia + "#" + gb.Donvitinh );
+            fwrite.Write(mancc + "#" + ncc.Mancc + "#" + ncc.Tenncc + "#" + ncc.Diachi+"#"+ncc.Sdt);
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
-        public void Update(List<giaban> list)
+        public void Update(List<NCC> list)
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)
-                fwrite.WriteLine(list[i].Magiaban+ "#" + list[i].Gia + "#" + list[i].Donvitinh );
+                fwrite.WriteLine(list[i].Mancc + "#" + list[i].Tenncc + "#" + list[i].Diachi + "#" + list[i].Sdt);
             fwrite.Close();
         }
     }
 }
-

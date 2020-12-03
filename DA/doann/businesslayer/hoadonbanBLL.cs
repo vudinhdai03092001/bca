@@ -7,7 +7,7 @@ using doann.DataAccessLayer.Interface;
 
 namespace doann.businesslayer
 {
-   public class hoadonbanBLL:I
+   public class hoadonbanBLL:
     {
     }
 }

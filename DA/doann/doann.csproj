@@ -59,6 +59,9 @@
     <Compile Include="DataAccessLayer\Interface\INCC_DAL.cs" />
     <Compile Include="DataAccessLayer\Interface\InhanvienDAL.cs" />
     <Compile Include="DataAccessLayer\Interface\ItinhluongDAL.cs" />
+    <Compile Include="DataAccessLayer\NCC_DAL.cs" />
+    <Compile Include="DataAccessLayer\nhanvienDAL.cs" />
+    <Compile Include="DataAccessLayer\tinhluongDAL.cs" />
     <Compile Include="presenation\frmgiaban.cs" />
     <Compile Include="presenation\frmhanghoa.cs" />
     <Compile Include="presenation\frmhoadonban.cs" />
