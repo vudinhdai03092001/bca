@@ -12,6 +12,6 @@ namespace doann.businesslayer.Interface
         void themhoadonban(giaban gb);
         void xoahoadonban(giaban magb);
         void suahoadonban(giaban gb);
-        List<giaban> timhoadon(giaban gb);
+        List<giaban> timgiaban(giaban gb);
     }
 }
