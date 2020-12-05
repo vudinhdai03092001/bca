@@ -10,8 +10,9 @@ namespace doann.businesslayer.Interface
     {
         List<hanghoa> GetAllhanghoa();
         void themhanghoa(hanghoa hh);
-        void xoahoadonban(hanghoa mahh);
-        void suahoadonban(hanghoa hh);
-        List<hanghoa> timhanghoa(hanghoa hh);
+        void xoahanghoa(hanghoa mahh);
+        void suahanghoa(hanghoa hh);
+        void timhanghoa(hanghoa hh);
+        void Hientimkiem(hanghoa hh);
     }
 }

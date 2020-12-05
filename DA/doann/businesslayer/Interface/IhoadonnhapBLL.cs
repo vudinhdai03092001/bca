@@ -9,10 +9,12 @@ namespace doann.businesslayer.Interface
 {
   public  interface IhoadonnhapBLL
     {
-        List<hoadonnhap> GetAllgiaban();
+        List<hoadonnhap> GetAllhoadonnhap();
         void themhoadonnhap(hoadonnhap hdn);
         void xoahoadonnhap(hoadonnhap mahdn);
         void suahoadonnhap(hoadonnhap hdn);
-        List<hoadonnhap> timhoanhap(hoadonnhap hdn);
+        List<hoadonnhap> timhoadonnhap(hoadonnhap hdn);
+
+
     }
 }

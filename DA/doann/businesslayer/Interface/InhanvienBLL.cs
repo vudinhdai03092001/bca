@@ -12,6 +12,7 @@ namespace doann.businesslayer.Interface
         void themnhanvien(nhanvien nv);
         void xoanhanvien(nhanvien manv);
         void suanhanvien(nhanvien nv);
-        List<NCC> timnhanvien(nhanvien nv);
+        List<nhanvien> Timnhanvien(nhanvien nv);
+
     }
 }

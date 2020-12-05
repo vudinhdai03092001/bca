@@ -26,7 +26,7 @@ namespace doann.DataAccessLayer
                 if (s != "")
                 {
                     string[] a = s.Split('#');
-                    list.Add(new nhanvien(a[0],a[1],a[2],DateTime.Parse(a[3]),DateTime.Parse(a[4])));
+                    list.Add(new nhanvien(a[0],a[1],a[2],a[3],DateTime.Parse(a[4]),DateTime.Parse(a[5])));
                 }
                 s = fread.ReadLine();
             }
@@ -40,7 +40,7 @@ namespace doann.DataAccessLayer
             string manv = DateTime.Now.ToString("ss");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
-            fwrite.Write(manv + "#" + nv.Mannv + "#" + nv.Gioitinh + "#" + nv.Loainv+"#"+nv.Ngaysinh+"#"+nv.Ngayvaolv);
+            fwrite.Write(manv + "#" + nv.Mannv + "#"+nv.Tennv +"#"+ nv.Gioitinh + "#" + nv.Loainv+"#"+nv.Ngaysinh+"#"+nv.Ngayvaolv);
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
@@ -48,7 +48,7 @@ namespace doann.DataAccessLayer
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)
-                fwrite.WriteLine(list[i].Mannv + "#" + list[i].Gioitinh + "#" + list[i].Loainv + "#" + list[i].Ngaysinh+"#"+list[i].Ngayvaolv);
+                fwrite.WriteLine(list[i].Mannv + "#" + list[i].Tennv + "#" + list[i].Gioitinh + "#" + list[i].Loainv + "#" + list[i].Ngaysinh+"#"+list[i].Ngayvaolv);
             fwrite.Close();
         }
     }

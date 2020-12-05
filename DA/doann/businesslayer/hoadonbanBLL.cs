@@ -4,75 +4,77 @@ using System.Linq;
 using System.Text;
 using doann.Entities;
 using doann.DataAccessLayer.Interface;
+using doann.DataAccessLayer;
+using doann.businesslayer.Interface;
 
 namespace doann.businesslayer
 {
    public class hoadonbanBLL:IhoadonbanBLL
     {
-        private I lhhdb = new HoadonbanDAL();
+        private IhoadonbanDAL lhhdb = new hoadonbanDAL();
         //Thực thi các yêu cầu
-        public List<Hoadonban> LayDSHoadonban()
+        public List<hoadonban> GetAllhoadonban()
         {
-            return lhhdb.LayDSHoadonban();
+            return lhhdb.GetAllhoadonban();
         }
-        public void Themhoadonban(Hoadonban hdb)
+        public void themhoadonban(hoadonban hdb)
         {
-            if (hdb.manvb != "")
+            if (hdb.Mahdb != "")
             {
-                lhhdb.Themhoadonban(hdb);
+                lhhdb.themhoadonban(hdb);
             }
             else
                 throw new Exception("Du lieu sai");
         }
-        public void Xoahoadonban(Hoadonban xhdb)
+        public void xoahoadonban(hoadonban mahdb)
         {
             int i;
-            List<Hoadonban> list = lhhdb.LayDSHoadonban();
+            List<hoadonban> list = lhhdb.GetAllhoadonban();
             for (i = 0; i < list.Count; ++i)
-                if (list[i].mahdb == xhdb.mahdb) break;
+                if (list[i].Mahdb == mahdb.Mahdb) break;
             if (i < list.Count)
             {
                 list.RemoveAt(i);
-                lhhdb.Update(list);
+                lhhdb.update(list);
             }
             else
                 throw new Exception("Khong ton tai ma nay");
         }
-        public void Suahoadonban(Hoadonban hdb)
+        public void suahoadonban(hoadonban hdb)
         {
             int i;
-            List<Hoadonban> list = lhhdb.LayDSHoadonban();
+            List<hoadonban> list = lhhdb.GetAllhoadonban();
             for (i = 0; i < list.Count; ++i)
-                if (list[i].mahdb == hdb.mahdb) break;
+                if (list[i].Mahdb == hdb.Mahdb) break;
             if (i < list.Count)
             {
                 list.RemoveAt(i);
                 list.Add(hdb);
-                lhhdb.Update(list);
+                lhhdb.update(list);
             }
             else
                 throw new Exception("Khong ton tai hs nay");
         }
-        public List<Hoadonban> Timhoadonban(Hoadonban hdb)
+        public List<hoadonban>timhoadonban(hoadonban hdb)
         {
-            List<Hoadonban> list = lhhdb.LayDSHoadonban();
-            List<Hoadonban> kq = new List<Hoadonban>();
+            List<hoadonban> list = lhhdb.GetAllhoadonban();
+            List<hoadonban> kq = new List<hoadonban>();
             //Voi gai tri ngam dinh ban dau
-            if (hdb.manvb == null && hdb.ngayban == null && hdb.Soluong == 0 && hdb.Gia == 0 && hdb.mahdb == null)
+            if (hdb.Mahdb == null && hdb.Giaban == 0 && hdb.Ngayban == null)
             {
                 kq = list;
             }
-            //Tim theo mavb
-            else if (hdb.mahdb != "")
+            //Tim theo 
+            else if (hdb.Mahdb != "")
             {
                 for (int i = 0; i < list.Count; ++i)
-                    if (list[i].mahdb.IndexOf(hdb.mahdb) >= 0)
+                    if (list[i].Mahdb.IndexOf(hdb.Mahdb) >= 0)
                     {
-                        kq.Add(new Hoadonban(list[i]));
+                        kq.Add(new hoadonban(list[i]));
                     }
             }
 
-            //Cac truong hop khac cac ban tu lam
+           
             else kq = null;
             return kq;
         }

@@ -5,7 +5,7 @@
 
 //namespace doann.Utility
 //{
-//   //tao 1 node dang tong quát với kiểu dữ liệu là T
+//    //tao 1 node dang tong quát với kiểu dữ liệu là T
 //    public class Node<T>
 //    {
 //        private T data;

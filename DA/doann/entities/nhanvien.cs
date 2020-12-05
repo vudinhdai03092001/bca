@@ -8,6 +8,7 @@ namespace doann.Entities
    public class nhanvien
     {
         private string mannv;
+        private string tennv;
         private string gioitinh;
         private string loainv;
         private DateTime ngaysinh;
@@ -22,6 +23,18 @@ namespace doann.Entities
             {
                 if (value!="")
                     mannv = value;
+            }
+        }
+        public string Tennv
+        {
+            get
+            {
+                return tennv;
+            }
+            set
+            {
+                if (value != "")
+                    tennv = value;
             }
         }
         public string Gioitinh
@@ -75,6 +88,7 @@ namespace doann.Entities
         public nhanvien()
         {
             mannv = "";
+            tennv = "";
             gioitinh = "";
             loainv = "";
             ngaysinh = new DateTime();
@@ -83,15 +97,17 @@ namespace doann.Entities
         public nhanvien(nhanvien nv)
         {
             this.mannv = nv.mannv;
+            this.tennv = nv.tennv;
             this.gioitinh = nv.gioitinh;
             this.loainv = nv.loainv;
             this.ngaysinh = nv.ngaysinh;
             this.ngayvaolv = nv.ngayvaolv;
         }
 
-        public nhanvien(string mannv1, string gioitinh1, string loainv1, DateTime ngaysinh1,DateTime ngayvaolv1)
+        public nhanvien(string mannv1,string tennv1, string gioitinh1, string loainv1, DateTime ngaysinh1,DateTime ngayvaolv1)
         {
             mannv1 = mannv;
+            tennv1 = tennv;
             gioitinh1 = gioitinh;
             loainv1 = loainv;
             ngaysinh1 = ngaysinh;
