@@ -75,6 +75,7 @@
     <Compile Include="presenation\frmNCC.cs" />
     <Compile Include="presenation\frmnhanvien.cs" />
     <Compile Include="presenation\frmtinhluong.cs" />
+    <Compile Include="presenation\menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\giaban.cs" />
