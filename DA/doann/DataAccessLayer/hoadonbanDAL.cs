@@ -5,7 +5,8 @@ using System.Text;
 using System.IO;
 using doann.Entities;
 //using System.Threading.tasks;
-
+//using doann.Utility;
+using doann.DataAccessLayer.Interface;
 
 namespace doann.DataAccessLayer
 {
@@ -13,7 +14,7 @@ namespace doann.DataAccessLayer
     {
         private string txtfile = "Data/hoadonban.txt";
         //Lấy toàn bộ dữ liệu có trong file hoadonban.txt đưa vào một danh sách 
-        public List<hoadonban> GetHoadonbans()
+        public List<hoadonban> GetAllhoadonban()
         {
             List<hoadonban> list = new List<hoadonban>();
             StreamReader fread = File.OpenText(txtfile);
@@ -41,7 +42,7 @@ namespace doann.DataAccessLayer
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
-        public void Update(List<hoadonban> list)
+        public void update(List<hoadonban> list)
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)

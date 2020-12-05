@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using doann.Entities;
+using doann.DataAccessLayer;
 
 namespace doann.businesslayer.Interface
 {
   public  interface IgiabanBLL
     {
         List<giaban> GetAllgiaban();
-        void themhoadonban(giaban gb);
-        void xoahoadonban(giaban magb);
-        void suahoadonban(giaban gb);
-        List<giaban> timgiaban(giaban gb);
+        void themgiaban(giaban gb);
+        void xoagiaban(giaban magb);
+        void suagiaban(giaban gb);
+        void timgiaban(giaban gb);
+        void Hientimkiem(giaban gb);
+        
     }
 }

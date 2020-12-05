@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using doann.Entities;
 using System.IO;
+using doann.DataAccessLayer.Interface;
 
 namespace doann.DataAccessLayer
 {
-    class NCC_DAL:
+    class NCC_DAL:INCC_DAL
     {
         private string txtfile = "Data/NCC.txt";
         //lay du lieu tu nhà cung cấp dua vao danh sach
@@ -31,7 +32,7 @@ namespace doann.DataAccessLayer
         }
 
         //Chèn một bản ghi nhà cung cấp vào tệp
-        public void ThemNCC(NCC ncc)
+        public void themNCC(NCC ncc)
         {
             string mancc = DateTime.Now.ToString("ss");
             StreamWriter fwrite = File.AppendText(txtfile);
@@ -40,7 +41,7 @@ namespace doann.DataAccessLayer
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
-        public void Update(List<NCC> list)
+        public void update(List<NCC> list)
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)

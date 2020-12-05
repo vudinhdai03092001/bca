@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using doann.Entities;
+using doann.DataAccessLayer.Interface;
 
 namespace doann.DataAccessLayer
 {
-    class hanghoaDAL
+    class hanghoaDAL:IhanghoaDAL
 
     {
         private string txtfile = "Data/hanghoa.txt";
@@ -31,7 +32,7 @@ namespace doann.DataAccessLayer
             return list;
         }
         //Chèn một bản ghi hàng hóa vào tệp
-        public void themhoadonnhap(hanghoa hh)
+        public void themhanghoa(hanghoa hh)
         {
             string mahang = DateTime.Now.ToString("tt");
             StreamWriter fwrite = File.AppendText(txtfile);
@@ -40,7 +41,7 @@ namespace doann.DataAccessLayer
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
-        public void Update(List<hanghoa> list)
+        public void update(List<hanghoa> list)
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)

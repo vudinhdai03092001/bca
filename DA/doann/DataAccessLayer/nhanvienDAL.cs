@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using doann.Entities;
 using System.IO;
+using doann.Utility;
+using doann.DataAccessLayer.Interface;
 
 
 
 namespace doann.DataAccessLayer
 {
-    class nhanvienDAL
+    class nhanvienDAL: InhanvienDAL
     {
         private string txtfile = "Data/nhanvien.txt";
         //lay du lieu tu nhân viên dua vao danh sach
@@ -33,7 +35,7 @@ namespace doann.DataAccessLayer
         }
 
         //Chèn một bản ghi nhan viên vào tệp
-        public void Themnhanvien(nhanvien nv)
+        public void themnhanvien(nhanvien nv)
         {
             string manv = DateTime.Now.ToString("ss");
             StreamWriter fwrite = File.AppendText(txtfile);
@@ -42,7 +44,7 @@ namespace doann.DataAccessLayer
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
-        public void Update(List<nhanvien> list)
+        public void update(List<nhanvien> list)
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)

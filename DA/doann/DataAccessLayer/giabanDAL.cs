@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using doann.Entities;
 using System.IO;
+using doann.DataAccessLayer.Interface;
+
 
 namespace doann.DataAccessLayer
 {
-    class giabanDAL
+    class giabanDAL :IgiabanDAL
+
     {
         private string txtfile = "Data/giaban.txt";
         //Lấy toàn bộ dữ liệu có trong file giaban.txt đưa vào một danh sách 
@@ -30,7 +33,7 @@ namespace doann.DataAccessLayer
             return list;
         }
         //Chèn một bản ghi giá bán vào tệp
-        public void themhoadonnhap(giaban gb)
+        public void themgiaban(giaban gb)
         {
             string magiaban = DateTime.Now.ToString("tt");
             StreamWriter fwrite = File.AppendText(txtfile);
@@ -39,7 +42,7 @@ namespace doann.DataAccessLayer
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
-        public void Update(List<giaban> list)
+        public void update(List<giaban> list)
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)

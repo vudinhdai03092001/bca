@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using doann.Entities;
 using System.IO;
+using doann.DataAccessLayer.Interface;
 
 
 namespace doann.DataAccessLayer
 {
-    class tinhluongDAL
+    class tinhluongDAL:ItinhluongDAL
     {
         private string txtfile = "Data/tinhluong.txt";
         //lay du lieu tu tính lương dua vao danh sach
@@ -32,7 +33,7 @@ namespace doann.DataAccessLayer
         }
 
         //Chèn một bản ghi tinh luong vào tệp
-        public void Themtinhluong(tinhluong tl)
+        public void themtinhluong(tinhluong tl)
         {
             string matl = DateTime.Now.ToString("ss");
             StreamWriter fwrite = File.AppendText(txtfile);
@@ -41,7 +42,7 @@ namespace doann.DataAccessLayer
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
-        public void Update(List<tinhluong> list)
+        public void update(List<tinhluong> list)
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)
