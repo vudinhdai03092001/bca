@@ -71,7 +71,7 @@
     <Compile Include="presenation\frmgiaban.cs" />
     <Compile Include="presenation\frmhanghoa.cs" />
     <Compile Include="presenation\frmhoadonban.cs" />
-    <Compile Include="presenation\frmhoadonnhan.cs" />
+    <Compile Include="presenation\frmhoadonnhap.cs" />
     <Compile Include="presenation\frmNCC.cs" />
     <Compile Include="presenation\frmnhanvien.cs" />
     <Compile Include="presenation\frmtinhluong.cs" />

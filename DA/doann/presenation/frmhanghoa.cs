@@ -2,99 +2,120 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using doann.businesslayer.Interface;
+using doann.Entities;
+using doann.businesslayer;
 
 namespace doann.presenation
 {
-    class frmhanghoa
+  public   class frmhanghoa
     {
-        private IDHoadonbanBLL spDLL = new HoadonbanBLL();
+        private IhanghoaBLL spDLL = new hanghoaBLL();
         public void Nhap()
         {
             Console.Clear();
-            Console.WriteLine("           NHAP THONG TIN HOA DON BAN    ");
-            Hoadonban sp = new Hoadonban();
+            Console.WriteLine("           NHAP THONG TIN HANG HOA   ");
+            hanghoa sp = new hanghoa();
             //  Console.Write("Nhap ma hoa don ban:"); sp.mahdb = int.Parse(Console.ReadLine());
-            Console.Write("Nhap ma nvb:"); sp.manvb = Console.ReadLine();
-            Console.Write("Nhap ngay ban :"); sp.ngayban = DateTime.Parse(Console.ReadLine());
-            Console.Write(" Nhap so luong :"); sp.Soluong = int.Parse(Console.ReadLine());
-            Console.Write("Nhap gia :"); sp.Gia = double.Parse(Console.ReadLine());
-            spDLL.Themhoadonban(sp);
+            Console.Write("Nhap ma hang:"); sp.Mahang = Console.ReadLine();
+            Console.Write("Nhap ten hang :"); sp.Tenhang = Console.ReadLine();
+            Console.Write(" Nhap so luong nhap :"); sp.Slnhap = int.Parse(Console.ReadLine());
+            Console.Write("Nhap so luong hien co :"); sp.Slhienco = int.Parse(Console.ReadLine());
+            spDLL.themhanghoa(sp);
         }
         public void Hien()
         {
             Console.Clear();
-            Console.WriteLine("                    HIEN THI THONG TIN HOA DON BAN");
-            Console.WriteLine("\t" + "mahdb" + "\t" + "manvb" + "\t" + "ngayban" + "\t\t\t" + "Soluong" + "\t\t" + "Gia");
-            List<Hoadonban> list = spDLL.LayDSHoadonban();
+            Console.WriteLine("                    HIEN THI THONG TIN HANG HOA");
+            Console.WriteLine("\t" + "mahh" + "\t" + "tenhang" + "\t" + "soluongnhap" + "\t\t\t" + "Soluonghienco");
+            List<hanghoa> list = spDLL.GetAllhanghoa();
             foreach (var sp in list)
-                Console.WriteLine("\t" + sp.mahdb + "\t" + sp.manvb + "\t" + sp.ngayban + "\t" + sp.Soluong + "\t\t" + sp.Gia);
+                Console.WriteLine("\t" + sp.Mahang + "\t" + sp.Tenhang + "\t" + sp.Slnhap + "\t" + sp.Slhienco );
         }
         public void Sua()
         {
             Console.Clear();
-            Console.WriteLine("SUA THONG TIN HOA DON BAN");
-            List<Hoadonban> list = spDLL.LayDSHoadonban();
+            Console.WriteLine("SUA THONG TIN HANG HOA");
+            List<hanghoa> list = spDLL.GetAllhanghoa();
             string ma;
             Console.Write("Nhap ma hoa don ban can sua:");
             ma = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; ++i)
-                if (list[i].mahdb == ma) break;
+                if (list[i].Mahang == ma) break;
 
             if (i < list.Count)
             {
-                Hoadonban sp = new Hoadonban(list[i]);
-                Console.Write("Nhap ma nvb:");
-                string manvb = Console.ReadLine();
-                if (manvb != "") sp.manvb = manvb;
-                Console.Write("ngay ban moi:");
-                DateTime nb = DateTime.Parse(Console.ReadLine());
-                sp.ngayban = nb;
-                Console.Write("Nhap so luong:");
-                int slg = int.Parse(Console.ReadLine());
-                if (slg > 0) sp.Soluong = slg;
-                Console.Write("Nhap gia moi:");
-                int g = int.Parse(Console.ReadLine());
-                if (g > 0) sp.Soluong = g;
-                spDLL.Suahoadonban(sp);
+                hanghoa sp = new hanghoa(list[i]);
+                Console.Write("Nhap ma hang hoa:");
+                string mahh = Console.ReadLine();
+                if (mahh != "") sp.Mahang = mahh;
+                Console.Write("ten hang:");
+                string th = Console.ReadLine();
+                sp.Tenhang = th;
+                Console.Write("Nhap so luong nhap:");
+                int sln = int.Parse(Console.ReadLine());
+                if (sln > 0) sp.Slnhap = sln;
+                Console.Write("Nhap so luong hien co:");
+                int slhc = int.Parse(Console.ReadLine());
+                if (slhc > 0) sp.Slhienco = slhc;
+                spDLL.suahanghoa(sp);
             }
             else
             {
-                Console.WriteLine("Khong ton tai ma hoa don ban nay");
+                Console.WriteLine("Khong ton tai ma hang hoa nay");
             }
         }
         public void xoa()
         {
             Console.Clear();
-            Console.WriteLine("XOA THONG TIN HOA DON BAN ");
-            List<Hoadonban> list = spDLL.LayDSHoadonban();
+            Console.WriteLine("XOA THONG TIN HANG HOA ");
+            List<hanghoa> list = spDLL.GetAllhanghoa();
             string ma;
-            Console.Write("Nhap ma hoa don ban can xoa:");
+            Console.Write("Nhap ma hoa don  can xoa:");
             ma = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; ++i)
-                if (list[i].mahdb == ma) break;
+                if (list[i].Mahang == ma) break;
 
             if (i < list.Count)
             {
-                Hoadonban b = new Hoadonban(list[i]);
-                spDLL.Xoahoadonban(b);
+                hanghoa b = new hanghoa(list[i]);
+                spDLL.xoahanghoa(b);
             }
             else
             {
                 Console.WriteLine("Khong ton tai ma san pham nay");
             }
         }
-        public void timkiem()
+        public void Hientimkiem()
         {
             Console.Clear();
-            Console.Write("Nhap ma hoa don ban can tim :");
+            Console.WriteLine("HIEN THONG TIN TIM KIEM");
+            List<hanghoa> list = spDLL.GetAllhanghoa();
+            string ma;
+            Console.Write("Nhap ma hang can hien thi:");
+            ma = Console.ReadLine();
+            int i;
+            for (i = 0; i < list.Count; ++i)
+                if (list[i].Mahang == ma) break;
+            if (i < list.Count)
+            {
+
+                hanghoa b = new hanghoa(list[i]);
+                spDLL.Hientimkiem(b);
+            }
+        }
+            public void timkiem()
+        {
+            Console.Clear();
+            Console.Write("Nhap ma hang hoa can tim :");
             string ma = Console.ReadLine();
             Console.WriteLine("                    HIEN THI THONG TIN TIM KIEM");
-            Console.WriteLine("\t" + "mahdb" + "\t" + "manvb" + "\t" + "ngayban" + "\t\t\t" + "Soluong" + "\t" + "Gia");
-            foreach (var sp in spDLL.LayDSHoadonban())
-                if (sp.mahdb.Contains(ma))
-                    Console.WriteLine("\t" + sp.mahdb + "\t" + sp.manvb + "\t" + sp.ngayban + "\t" + sp.Soluong + "\t" + sp.Gia);
+            Console.WriteLine("\t" + "mahh" + "\t" + "ten hang hoa" + "\t" + "soluongnhap" + "\t\t\t" + "Soluonghienco");
+            foreach (var sp in spDLL.GetAllhanghoa())
+                if (sp.Mahang.Contains(ma))
+                    Console.WriteLine("\t" + sp.Mahang + "\t" + sp.Tenhang + "\t" + sp.Slnhap+ "\t" + sp.Slhienco );
             Console.ReadLine();
         }
     }

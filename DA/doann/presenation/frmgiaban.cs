@@ -8,7 +8,7 @@ using doann.businesslayer.Interface;
 
 namespace doann.presenation
 {
-    class frmgiaban
+   public class frmgiaban
     {
         private IgiabanBLL spDLL = new giabanBLL();
         public void Nhap()
@@ -125,7 +125,7 @@ namespace doann.presenation
             Console.Write("Nhap ma hang can tim :");
             string ma = Console.ReadLine();
             Console.WriteLine("        HIEN THI THONG TIN TIM KIEM");
-            Console.WriteLine("\t" + "mahang" + "\t\t" + "gia" + "\t\t" + "donvi);
+            Console.WriteLine("\t" + "mahang" + "\t\t" + "gia" + "\t\t" + "donvi");
             foreach (var s in spDLL.GetAllgiaban())
                 if (s.Magiaban.Contains(ma))
                     Console.WriteLine("\t" + s.Magiaban + "\t\t" + s.Gia + "\t\t" + s.Donvitinh);
