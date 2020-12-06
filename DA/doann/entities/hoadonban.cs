@@ -39,12 +39,12 @@ namespace doann.Entities
         {
             get
             {
-                return Ngayban;
+                return ngayban;
             }
             set
             {
 
-                Ngayban = value;
+                ngayban = value;
             }
         }
         public hoadonban()

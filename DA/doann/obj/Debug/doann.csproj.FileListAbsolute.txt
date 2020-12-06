@@ -1,2 +1,6 @@
 C:\Users\Admin\Desktop\bca\DA\doann\obj\Debug\doann.csprojAssemblyReference.cache
 C:\Users\Admin\Desktop\bca\DA\doann\obj\Debug\doann.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\bca\DA\doann\bin\Debug\doann.exe
+C:\Users\Admin\Desktop\bca\DA\doann\bin\Debug\doann.pdb
+C:\Users\Admin\Desktop\bca\DA\doann\obj\Debug\doann.exe
+C:\Users\Admin\Desktop\bca\DA\doann\obj\Debug\doann.pdb

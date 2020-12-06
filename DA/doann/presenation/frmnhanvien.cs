@@ -8,7 +8,7 @@ using doann.Entities;
 
 namespace doann.presenation
 {
-    class frmnhanvien
+   public class frmnhanvien
     {
         private InhanvienBLL spDLL = new nhanvienBLL();
         public void Nhap()

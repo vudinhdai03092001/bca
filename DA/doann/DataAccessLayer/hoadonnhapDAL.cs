@@ -41,7 +41,7 @@ namespace doann.DataAccessLayer
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
-        public void Update(List<hoadonnhap> list)
+        public void update(List<hoadonnhap> list)
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)
