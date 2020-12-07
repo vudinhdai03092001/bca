@@ -9,7 +9,7 @@ using doann.businesslayer.Interface;
 
 namespace doann.businesslayer
 {
-   public class hoadonbanBLL:IhoadonbanBLL
+    public class hoadonbanBLL : IhoadonbanBLL
     {
         private IhoadonbanDAL lhhdb = new hoadonbanDAL();
         //Thực thi các yêu cầu
@@ -55,7 +55,7 @@ namespace doann.businesslayer
             else
                 throw new Exception("Khong ton tai hs nay");
         }
-        public List<hoadonban>timhoadonban(hoadonban hdb)
+        public List<hoadonban> timhoadonban(hoadonban hdb)
         {
             List<hoadonban> list = lhhdb.GetAllhoadonban();
             List<hoadonban> kq = new List<hoadonban>();
@@ -74,9 +74,21 @@ namespace doann.businesslayer
                     }
             }
 
-           
+
             else kq = null;
             return kq;
+        }
+        public void Hientimkiem(hoadonban hdb)
+        {
+            int i;
+            List<hoadonban> list = lhhdb.GetAllhoadonban();
+            Console.WriteLine("mahoadonban" + "\t" + "giaban" + "\t" + "ngay");
+            for (i = 0; i < list.Count; ++i)
+                if (list[i].Mahdb == hdb.Mahdb)
+                    Console.WriteLine(hdb.Mahdb + "\t" + hdb.Giaban + "\t\t" + hdb.Ngayban);
+
+                else
+                    throw new Exception("Khong ton tai hs nay");
         }
     }
 }

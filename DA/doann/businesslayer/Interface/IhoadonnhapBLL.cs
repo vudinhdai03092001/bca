@@ -14,6 +14,7 @@ namespace doann.businesslayer.Interface
         void xoahoadonnhap(hoadonnhap mahdn);
         void suahoadonnhap(hoadonnhap hdn);
         List<hoadonnhap> timhoadonnhap(hoadonnhap hdn);
+        void Hientimkiem(hoadonnhap hdn);
 
 
     }

@@ -87,7 +87,25 @@ namespace doann.presenation
                 Console.WriteLine("Khong ton tai ma san pham nay");
             }
         }
-        public void timkiem()
+        public void Hientimkiem()
+        {
+            Console.Clear();
+            Console.WriteLine("HIEN THONG TIN TIM KIEM");
+            List<hoadonban> list = spDLL.GetAllhoadonban();
+            string ma;
+            Console.Write("Nhap ma hoa don ban can hien thi:");
+            ma = Console.ReadLine();
+            int i;
+            for (i = 0; i < list.Count; ++i)
+                if (list[i].Mahdb == ma) break;
+            if (i < list.Count)
+            {
+
+                hoadonban b = new hoadonban(list[i]);
+                spDLL.Hientimkiem(b);
+            }
+        }
+            public void timkiem()
         {
             Console.Clear();
             Console.Write("Nhap ma hoa don ban can tim :");

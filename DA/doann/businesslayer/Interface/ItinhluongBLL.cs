@@ -12,7 +12,7 @@ namespace doann.businesslayer.Interface
         void themtinhluong(tinhluong tl);
         void xoatinhluong(tinhluong tl);
         void suatinhluong(tinhluong tl);
-        
+        List<tinhluong> Timtinhluong(tinhluong tl);
         void Hientimkiem(tinhluong tl);
     }
 }

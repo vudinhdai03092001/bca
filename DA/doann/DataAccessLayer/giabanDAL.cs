@@ -7,6 +7,7 @@ using System.IO;
 using doann.DataAccessLayer.Interface;
 
 
+
 namespace doann.DataAccessLayer
 {
     class giabanDAL :IgiabanDAL
@@ -17,8 +18,8 @@ namespace doann.DataAccessLayer
         public List<giaban> GetAllgiaban()
         {
             List<giaban> list = new List<giaban>();
-            StreamReader fread = File.OpenText(txtfile);
-            string s = fread.ReadLine();
+            StreamReader sr = File.OpenText(txtfile);
+            string s = sr.ReadLine();
             while (s != null)
             {
                 if (s != "")
@@ -27,27 +28,27 @@ namespace doann.DataAccessLayer
                     string[] a = s.Split('#');
                     list.Add(new giaban(a[0], double.Parse(a[1]), a[2]));
                 }
-                s = fread.ReadLine();
+                s = sr.ReadLine();
             }
-            fread.Close();
+            sr.Close();
             return list;
         }
         //Chèn một bản ghi giá bán vào tệp
         public void themgiaban(giaban gb)
         {
             string magiaban = DateTime.Now.ToString("tt");
-            StreamWriter fwrite = File.AppendText(txtfile);
-            fwrite.WriteLine();
-            fwrite.Write(magiaban + "#" + gb.Magiaban + "#" + gb.Gia + "#" + gb.Donvitinh );
-            fwrite.Close();
+            StreamWriter sw = File.AppendText(txtfile);
+            sw.WriteLine();
+            sw.Write(magiaban + "#" + gb.Magiaban + "#" + gb.Gia + "#" + gb.Donvitinh );
+            sw.Close();
         }
         //Cập nhật lại danh sách vào tệp        
         public void update(List<giaban> list)
         {
-            StreamWriter fwrite = File.CreateText(txtfile);
+            StreamWriter sw = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)
-                fwrite.WriteLine(list[i].Magiaban+ "#" + list[i].Gia + "#" + list[i].Donvitinh );
-            fwrite.Close();
+                sw.WriteLine(list[i].Magiaban+ "#" + list[i].Gia + "#" + list[i].Donvitinh );
+            sw.Close();
         }
     }
 }

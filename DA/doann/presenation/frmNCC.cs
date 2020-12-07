@@ -94,6 +94,24 @@ namespace doann.presenation
                 Console.WriteLine("Khong ton tai nha cung cap nay");
             }
         }
+        public void Hientimkiem()
+        {
+            Console.Clear();
+            Console.WriteLine("HIEN THONG TIN TIM KIEM");
+            List<NCC> list = spDLL.GetAllNCC();
+            string ma;
+            Console.Write("Nhap ma nha cung cap can hien thi:");
+            ma = Console.ReadLine();
+            int i;
+            for (i = 0; i < list.Count; ++i)
+                if (list[i].Mancc == ma) break;
+            if (i < list.Count)
+            {
+
+                NCC b = new NCC(list[i]);
+                spDLL.Hientimkiem(b);
+            }
+        }
         public void timkiem()
         {
             Console.Clear();

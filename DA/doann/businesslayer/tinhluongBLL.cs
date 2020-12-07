@@ -55,6 +55,30 @@ namespace doann.businesslayer
             else
                 throw new Exception("Khong ton tai hs nay");
         }
+        public List<tinhluong> Timtinhluong(tinhluong tl)
+        {
+            List<tinhluong> list = lhtl.GetAlltinhluong();
+            List<tinhluong> kq = new List<tinhluong>();
+            //Voi gai tri ngam dinh ban dau
+            if (tl.Matl == null && tl.Songaylv == 0 &&tl.Thuong== 0 && tl.Luongcoban == 0 && tl.Thanhtien == 0 )
+            {
+                kq = list;
+            }
+            //Tim theo ho ten
+            if (tl.Matl != null)
+            {
+
+                for (int i = 0; i < list.Count; ++i)
+                    if (list[i].Matl.IndexOf(tl.Matl) >= 0)
+                    {
+                        kq.Add(new tinhluong(list[i]));
+                    }
+            }
+
+            //Cac truong hop khac cac ban tu lam
+            else kq = null;
+            return kq;
+        }
         public void Hientimkiem(tinhluong tl)
         {
             int i;
@@ -68,5 +92,8 @@ namespace doann.businesslayer
                     throw new Exception("Khong ton tai hs nay");
         }
     }
-   }
+    
+
+}
+
 

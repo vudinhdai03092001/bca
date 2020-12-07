@@ -13,6 +13,7 @@ namespace doann.businesslayer.Interface
         void xoanhanvien(nhanvien manv);
         void suanhanvien(nhanvien nv);
         List<nhanvien> Timnhanvien(nhanvien nv);
+        void Hientimkiem(nhanvien nv);
 
     }
 }

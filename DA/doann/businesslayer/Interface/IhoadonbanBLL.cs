@@ -15,6 +15,7 @@ namespace doann.businesslayer
         void xoahoadonban(hoadonban mahdb);
         void suahoadonban(hoadonban hd);
         List<hoadonban> timhoadonban(hoadonban hdb);
+        void Hientimkiem(hoadonban hdb);
 
     }
 }

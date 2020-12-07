@@ -13,7 +13,7 @@ namespace doann.businesslayer.Interface
         void themncc(NCC ncc);
         void xoancc(NCC mancc);
         void suancc(NCC ncc);
-       
+        void Hientimkiem(NCC ncc);
         List<NCC> Timncc(NCC ncc);
     }
     

@@ -92,6 +92,24 @@ namespace doann.presenation
                 Console.WriteLine("Khong co bang luong ");
             }
         }
+        public void Hientimkiem()
+        {
+            Console.Clear();
+            Console.WriteLine("HIEN THONG TIN TIM KIEM");
+            List<tinhluong> list = spDLL.GetAlltinhluong();
+            string ma;
+            Console.Write("Nhap ma hoa don ban can hien thi:");
+            ma = Console.ReadLine();
+            int i;
+            for (i = 0; i < list.Count; ++i)
+                if (list[i].Matl== ma) break;
+            if (i < list.Count)
+            {
+
+                tinhluong b = new tinhluong(list[i]);
+                spDLL.Hientimkiem(b);
+            }
+        }
         public void timkiem()
         {
             Console.Clear();

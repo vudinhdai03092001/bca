@@ -96,6 +96,17 @@ namespace doann.businesslayer
             else kq = null;
             return kq;
         }
+        public void Hientimkiem(NCC ncc)
+        {
+            int i;
+            List<NCC> list =lhncc.GetAllNCC();
+            Console.WriteLine("manhacungcap" + "\t" + "tennhacungcap" + "\t" + "diachi" + "\t" + "sodienthoai" );
+            for (i = 0; i < list.Count; ++i)
+                if (list[i].Mancc == ncc.Mancc)
+                    Console.WriteLine(ncc.Mancc + "\t" +ncc.Tenncc + "\t\t" + ncc.Diachi + "\t\t" + ncc.Sdt );
 
+                else
+                    throw new Exception("Khong ton tai hs nay");
+        }
     }
 }

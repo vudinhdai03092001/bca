@@ -27,7 +27,7 @@ namespace doann.presenation
         {
             Console.Clear();
             Console.WriteLine("                    HIEN THI THONG TIN HANG HOA");
-            Console.WriteLine("\t" + "mahh" + "\t" + "tenhang" + "\t" + "soluongnhap" + "\t\t\t" + "Soluonghienco");
+            Console.WriteLine("\t" + "mahh" + "\t" + "tenhang" + "\t" + "soluongnhap" + "\t" + "Soluonghienco");
             List<hanghoa> list = spDLL.GetAllhanghoa();
             foreach (var sp in list)
                 Console.WriteLine("\t" + sp.Mahang + "\t" + sp.Tenhang + "\t" + sp.Slnhap + "\t" + sp.Slhienco );
@@ -112,7 +112,7 @@ namespace doann.presenation
             Console.Write("Nhap ma hang hoa can tim :");
             string ma = Console.ReadLine();
             Console.WriteLine("                    HIEN THI THONG TIN TIM KIEM");
-            Console.WriteLine("\t" + "mahh" + "\t" + "ten hang hoa" + "\t" + "soluongnhap" + "\t\t\t" + "Soluonghienco");
+            Console.WriteLine("\t" + "mahh" + "\t" + "ten hang hoa" + "\t" + "soluongnhap" + "\t" + "Soluonghienco");
             foreach (var sp in spDLL.GetAllhanghoa())
                 if (sp.Mahang.Contains(ma))
                     Console.WriteLine("\t" + sp.Mahang + "\t" + sp.Tenhang + "\t" + sp.Slnhap+ "\t" + sp.Slhienco );

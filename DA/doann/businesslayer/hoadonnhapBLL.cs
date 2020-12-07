@@ -65,7 +65,7 @@ namespace doann.businesslayer
                 kq = list;
             }
             //Tim theo mancc
-            if (hdn.Mahdn !="")
+            if (hdn.Mahdn != "")
             {
                 for (int i = 0; i < list.Count; ++i)
                     if (list[i].Mahdn.IndexOf(hdn.Mahdn) >= 0)
@@ -77,6 +77,18 @@ namespace doann.businesslayer
             //Cac truong hop khac cac ban tu lam
             else kq = null;
             return kq;
+        }
+        public void Hientimkiem(hoadonnhap hdn)
+        {
+            int i;
+            List<hoadonnhap> list = lhdn.GetAllhoadonnhap();
+            Console.WriteLine("mahoadonnhap" + "\t" + "nhanviengiao" + "\t" + "manhanviennhap" + "\t" + "ngaynhap" + "\t" + "gianhap");
+            for (i = 0; i < list.Count; ++i)
+                if (list[i].Mahdn == hdn.Mahdn)
+                    Console.WriteLine(hdn.Mahdn + "\t" + hdn.Nvgiao + "\t\t" + hdn.Manvnhap + "\t\t" + hdn.Ngaynhan + "\t\t" + hdn.Gianhap);
+
+                else
+                    throw new Exception("Khong ton tai hs nay");
         }
     }
 }
