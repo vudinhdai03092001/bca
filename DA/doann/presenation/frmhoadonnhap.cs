@@ -15,16 +15,11 @@ namespace doann.presenation
         {
             Console.Clear();
             Console.WriteLine("           NHAP THONG TIN HOA DON NHAP   ");
-            hoadonnhap sp = new hoadonnhap();
-
-            Console.Write("Nhap ma hoa don nhap:"); sp.Mahdn = Console.ReadLine();
-            Console.Write("Nhap nhan vien giao:"); sp.Nvgiao = Console.ReadLine();
+            hoadonnhap sp = new hoadonnhap();          
+            Console.Write(" Nhap nhan vien giao:"); sp.Nvgiao = Console.ReadLine();
             Console.Write(" Nhap ma nhan vien nhap:"); sp.Manvnhap =Console.ReadLine();
             Console.Write(" Nhap ngay nhan:"); sp.Ngaynhan =DateTime.Parse( Console.ReadLine()); 
-            Console.Write(" Nhap gia nhap:"); sp.Gianhap =double.Parse( Console.ReadLine());
-           
-
-
+            Console.Write(" Nhap gia nhap:"); sp.Gianhap =double.Parse( Console.ReadLine());         
             spDLL.themhoadonnhap(sp);
         }
         public void Hien()
@@ -50,10 +45,7 @@ namespace doann.presenation
 
             if (i < list.Count)
             {
-                hoadonnhap sp = new hoadonnhap(list[i]);
-                Console.Write("Nhap ma hoa don nhap:");
-                string mahdn = Console.ReadLine();
-                if (mahdn != "") sp.Mahdn = mahdn;
+                hoadonnhap sp = new hoadonnhap(list[i]);               
                 Console.Write("nhap nhan vien giao: ");
                 string nvn = Console.ReadLine();
                 if (nvn != "") sp.Nvgiao= nvn;
@@ -66,8 +58,6 @@ namespace doann.presenation
                 Console.Write("Nhap ngay nhap:");
                 DateTime nn = DateTime.Parse(Console.ReadLine());
                 sp.Ngaynhan = nn;
-
-
                 spDLL.suahoadonnhap(sp);
             }
             else

@@ -5,7 +5,7 @@ using System.Text;
 using doann.businesslayer;
 using doann.Entities;
 using doann.businesslayer.Interface;
-
+using doann.Utility;
 namespace doann.presenation
 {
    public class frmgiaban
@@ -16,7 +16,6 @@ namespace doann.presenation
             Console.Clear();
             Console.WriteLine("NHAP THONG TIN GIA BAN");
             giaban sp = new giaban();
-            Console.Write("ma gia ban:"); sp.Magiaban = Console.ReadLine();
             Console.Write("Nhap gia ban :"); sp.Gia = double.Parse(Console.ReadLine());
             Console.Write("don vi tinh:"); sp.Donvitinh = Console.ReadLine();
 
@@ -47,10 +46,7 @@ namespace doann.presenation
 
             if (i < list.Count)
             {
-                giaban sp = new giaban(list[i]);
-                //Console.Write("Nhap ma sp can sua:");
-               // string ten = Console.ReadLine();
-                //if (!string.IsNullOrEmpty(ten)) sp.Magiaban = ten;
+                giaban sp = new giaban(list[i]);               
                 Console.Write("Gia moi:");
                 int gia = int.Parse(Console.ReadLine());
                 if (gia > 0) sp.Gia = gia;                
@@ -81,25 +77,7 @@ namespace doann.presenation
                 giaban   b = new giaban(list[i]);
                 spDLL.xoagiaban(b);
             }
-        }
-        //public void timkiem()
-        //{
-        //    Console.Clear();
-        //    Console.WriteLine(" THONG TIN TIM KIEM");
-        //    List<giaban> list = spDLL.GetAllgiaban();
-        //    string ma;
-        //    Console.Write("Nhap ma hang can tim:");
-        //    ma = Console.ReadLine();
-        //    int i = 0;
-        //    for (i = 0; i < list.Count; ++i)
-        //        if (list[i].Magiaban== ma) break;
-
-        //    if (i < list.Count)
-        //    {
-        //       giaban b = new giaban(list[i]);
-        //        spDLL.timgiaban(b);
-        //    }
-        //}
+        }       
         public void Hientimkiem()
         {
             Console.Clear();
@@ -117,7 +95,6 @@ namespace doann.presenation
                 giaban b = new giaban(list[i]);
                 spDLL.Hientimkiem(b);
             }
-
         }
         public void timkiem()
         {

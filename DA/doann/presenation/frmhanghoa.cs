@@ -16,10 +16,8 @@ namespace doann.presenation
             Console.Clear();
             Console.WriteLine("           NHAP THONG TIN HANG HOA   ");
             hanghoa sp = new hanghoa();
-            //  Console.Write("Nhap ma hoa don ban:"); sp.mahdb = int.Parse(Console.ReadLine());
-            Console.Write("Nhap ma hang:"); sp.Mahang = Console.ReadLine();
             Console.Write("Nhap ten hang :"); sp.Tenhang = Console.ReadLine();
-            Console.Write(" Nhap so luong nhap :"); sp.Slnhap = int.Parse(Console.ReadLine());
+            Console.Write("Nhap so luong nhap :"); sp.Slnhap = int.Parse(Console.ReadLine());
             Console.Write("Nhap so luong hien co :"); sp.Slhienco = int.Parse(Console.ReadLine());
             spDLL.themhanghoa(sp);
         }
@@ -47,9 +45,6 @@ namespace doann.presenation
             if (i < list.Count)
             {
                 hanghoa sp = new hanghoa(list[i]);
-                Console.Write("Nhap ma hang hoa:");
-                string mahh = Console.ReadLine();
-                if (mahh != "") sp.Mahang = mahh;
                 Console.Write("ten hang:");
                 string th = Console.ReadLine();
                 sp.Tenhang = th;

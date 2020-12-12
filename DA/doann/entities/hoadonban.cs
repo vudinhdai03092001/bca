@@ -49,22 +49,21 @@ namespace doann.Entities
         }
         public hoadonban()
         {
-            mahdb = "";
-            ngayban=new DateTime();
-            giaban = 0;
         }
         public hoadonban(hoadonban hd)
         {
             this.mahdb = hd.mahdb;
-            this.ngayban = hd.ngayban;
             this.giaban = hd.giaban;
+            this.ngayban = hd.ngayban;
+           
         }        
-        public hoadonban(string mahdb1, DateTime ngayban1, double giaban1   )
+        public hoadonban(string mahdb1, double giaban1 , DateTime ngayban1)
         {
             mahdb = mahdb1;
-            ngayban = ngayban1;
+           
             giaban = giaban1;
-    }
+            ngayban = ngayban1;
+        }
 }
         
     }

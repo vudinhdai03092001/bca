@@ -16,8 +16,6 @@ namespace doann.presenation
             Console.Clear();
             Console.WriteLine("           NHAP THONG TIN NHA CUNG CAP   ");
             NCC sp = new NCC();
-
-            Console.Write("Nhap ma nha cungcap:"); sp.Mancc = Console.ReadLine();
             Console.Write("Nhap ten nha cung cap:"); sp.Tenncc = Console.ReadLine();
             Console.Write(" Nhap dia chi:"); sp.Diachi= Console.ReadLine();
             Console.Write(" Nhap so dien thoai:"); sp.Sdt = int.Parse(Console.ReadLine());
@@ -50,9 +48,6 @@ namespace doann.presenation
             if (i < list.Count)
             {
                 NCC sp = new NCC(list[i]);
-                Console.Write("Nhap ma nha cung cap:");
-                string nc = Console.ReadLine();
-                if (nc != "") sp.Mancc = nc;
                 Console.Write("nhap ten nha cung cap: ");
                 string tnc = Console.ReadLine();
                 if (tnc != "") sp.Tenncc = tnc;

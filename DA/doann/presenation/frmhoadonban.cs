@@ -16,8 +16,6 @@ namespace doann.presenation
             Console.Clear();
             Console.WriteLine("           NHAP THONG TIN HOA DON BAN   ");
             hoadonban sp = new hoadonban();
-           
-            Console.Write("Nhap ma hoa don ban:"); sp.Mahdb = Console.ReadLine();
             Console.Write("Nhap gia ban :"); sp.Giaban =double.Parse( Console.ReadLine());
             Console.Write(" Nhap ngay ban:"); sp.Ngayban = DateTime.Parse(Console.ReadLine());
            
@@ -47,17 +45,13 @@ namespace doann.presenation
             if (i < list.Count)
             {
                 hoadonban sp = new hoadonban(list[i]);
-                Console.Write("Nhap ma hoa don ban:");
-                string mahdb = Console.ReadLine();
-                if (mahdb != "") sp.Mahdb = mahdb;
                 Console.Write("gia ban:");
                 double gb  =double.Parse( Console.ReadLine());
                 sp.Giaban = gb;
                 Console.Write("Nhap ngay ban:");
                 DateTime nb = DateTime.Parse(Console.ReadLine());
                  sp.Ngayban = nb;
-              
-                
+                              
                 spDLL.suahoadonban(sp);
             }
             else

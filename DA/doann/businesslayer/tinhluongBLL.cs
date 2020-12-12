@@ -19,7 +19,7 @@ namespace doann.businesslayer
         }
         public void themtinhluong(tinhluong tl)
         {
-            if (tl.Matl != "")
+            if (tl.Luongcoban >0)
             {
                 lhtl.themtinhluong(tl);
             }
@@ -27,6 +27,7 @@ namespace doann.businesslayer
                 throw new Exception("Du lieu sai");
         }
         public void xoatinhluong(tinhluong xtl)
+            
         {
             int i;
             List<tinhluong> list = lhtl.GetAlltinhluong();

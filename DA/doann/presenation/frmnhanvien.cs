@@ -6,6 +6,7 @@ using doann.businesslayer.Interface;
 using doann.businesslayer;
 using doann.Entities;
 
+
 namespace doann.presenation
 {
    public class frmnhanvien
@@ -16,9 +17,7 @@ namespace doann.presenation
             Console.Clear();
             Console.WriteLine("           NHAP THONG TIN NHAN VIEN   ");
             nhanvien sp = new nhanvien();
-
-            Console.Write("Nhap ma nhan vien:"); sp.Mannv = Console.ReadLine();
-            Console.Write("Nhap ten nhan vien:"); sp.Tennv = Console.ReadLine();
+            Console.Write(" Nhap ten nhan vien:"); sp.Tennv = Console.ReadLine();
             Console.Write(" Nhap gioi tinh :"); sp.Gioitinh= Console.ReadLine();
             Console.Write(" Nhap loai nhan vien:"); sp.Loainv= Console.ReadLine();
             Console.Write(" Nhap ngay sinh:"); sp.Ngaysinh = DateTime.Parse(Console.ReadLine());
@@ -52,9 +51,7 @@ namespace doann.presenation
             if (i < list.Count)
             {
                 nhanvien sp = new nhanvien(list[i]);
-                Console.Write("Nhap ma nhan vien:");
-                string manv = Console.ReadLine();
-                if (manv != "") sp.Mannv = manv;
+            
                 Console.Write("nhap nhan vien : ");
                 string nvn = Console.ReadLine();
                 if (nvn != "") sp.Tennv = nvn;

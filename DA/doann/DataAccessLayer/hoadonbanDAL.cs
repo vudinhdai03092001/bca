@@ -23,22 +23,23 @@ namespace doann.DataAccessLayer
             {
                 if (s != "")
                 {
-                    
+
                     string[] a = s.Split('#');
-                    list.Add(new hoadonban(a[0], DateTime.Parse(a[1]), double.Parse(a[2])));
+                    list.Add(new hoadonban(a[0],double.Parse(a[1]), DateTime.Parse(a[2])));
                 }
                 s = fread.ReadLine();
             }
-            fread.Close();
+            fread.Close(); 
             return list;
         }
-        //Chèn một bản ghi hóa đơn bán vào tệp
+        //Chèn một bản ghi hóa đơn bán vào tệp 
+
         public void themhoadonban(hoadonban hd)
         {
             string mahdb = DateTime.Now.ToString("tt");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
-            fwrite.Write( mahdb + "#" + hd.Mahdb+"#"+hd.Giaban+"#"+hd.Ngayban);
+            fwrite.Write( mahdb +"#"+hd.Giaban+"#"+hd.Ngayban);
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        

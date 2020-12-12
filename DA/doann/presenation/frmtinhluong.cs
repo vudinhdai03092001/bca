@@ -16,8 +16,6 @@ namespace doann.presenation
             Console.Clear();
             Console.WriteLine("           NHAP THONG TIN TINH LUONG  ");
             tinhluong sp = new tinhluong();
-
-            Console.Write("Nhap ma tinh luong:"); sp.Matl = Console.ReadLine();
             Console.Write("Nhap so ngay lam viec:"); sp.Songaylv =float.Parse( Console.ReadLine());
             Console.Write(" Nhap thuong :"); sp.Thuong =double.Parse( Console.ReadLine());
             Console.Write(" Nhap luong co ban:"); sp.Luongcoban =double.Parse( Console.ReadLine());
@@ -48,12 +46,6 @@ namespace doann.presenation
             if (i < list.Count)
             {
                 tinhluong sp = new tinhluong(list[i]);
-                Console.Write("Nhap ma tinh luong:");
-                string tl = Console.ReadLine();
-                if (tl !="") sp.Matl= tl;
-                Console.Write("nhap so ngay lam viec : ");
-                float lv =float.Parse( Console.ReadLine());
-                if (lv >=0) sp.Songaylv = lv;
                 Console.Write("Nhap thuong:");
                 double nt =double.Parse( Console.ReadLine());
                 if (nt >=0) sp.Thuong= nt;
