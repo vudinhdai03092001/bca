@@ -25,10 +25,10 @@ namespace doann.presenation
         {
             Console.Clear();
             Console.WriteLine("                    HIEN THI THONG TIN HANG HOA");
-            Console.WriteLine("\t" + "mahh" + "\t" + "tenhang" + "\t" + "soluongnhap" + "\t" + "Soluonghienco");
+            Console.WriteLine("\t" + "mahh" + "\t" + "tenhang" + "\t\t" + "soluongnhap" + "\t" + "Soluonghienco");
             List<hanghoa> list = spDLL.GetAllhanghoa();
             foreach (var sp in list)
-                Console.WriteLine("\t" + sp.Mahang + "\t" + sp.Tenhang + "\t" + sp.Slnhap + "\t" + sp.Slhienco );
+                Console.WriteLine("\t" + sp.Mahang + "\t" + sp.Tenhang + "\t\t" + sp.Slnhap + "\t\t" + sp.Slhienco );
         }
         public void Sua()
         {

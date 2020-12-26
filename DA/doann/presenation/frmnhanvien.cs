@@ -31,10 +31,10 @@ namespace doann.presenation
         {
             Console.Clear();
             Console.WriteLine("                    HIEN THI THONG TIN NHAN VIEN");
-            Console.WriteLine("\t" + "manv" + "\t" + "tennv" + "\t" + "gioitinh" + "\t" + "loainv" + "\t" + "ngaysinh"+"\t"+"ngayvaolv");
+            Console.WriteLine("\t" + "manv" + "\t" + "tennv" + "\t" + "gioitinh" + "\t" + "loainv" + "\t\t" + "ngaysinh"+"\t\t\t"+"ngayvaolv");
             List<nhanvien> list = spDLL.GetAllnhanvien();
             foreach (var sp in list)
-                Console.WriteLine("\t" + sp.Mannv + "\t" + sp.Tennv + "\t" + sp.Gioitinh + "\t" + sp.Loainv + "\t" + sp.Ngaysinh+"\t"+sp.Ngayvaolv);
+                Console.WriteLine("\t" + sp.Mannv + "\t" + sp.Tennv + "\t" + sp.Gioitinh + "\t\t" + sp.Loainv + "\t\t" + sp.Ngaysinh+"\t\t"+sp.Ngayvaolv);
         }
         public void Sua()
         {

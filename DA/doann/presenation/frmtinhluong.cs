@@ -16,7 +16,7 @@ namespace doann.presenation
             Console.Clear();
             Console.WriteLine("           NHAP THONG TIN TINH LUONG  ");
             tinhluong sp = new tinhluong();
-            Console.Write("Nhap so ngay lam viec:"); sp.Songaylv =float.Parse( Console.ReadLine());
+            Console.Write(" Nhap so ngay lam viec:"); sp.Songaylv =float.Parse( Console.ReadLine());
             Console.Write(" Nhap thuong :"); sp.Thuong =double.Parse( Console.ReadLine());
             Console.Write(" Nhap luong co ban:"); sp.Luongcoban =double.Parse( Console.ReadLine());
            
@@ -26,10 +26,10 @@ namespace doann.presenation
         {
             Console.Clear();
             Console.WriteLine("                    HIEN THI THONG TIN BANG LUONG");
-            Console.WriteLine("\t" + "matl" + "\t" + "songaylamviec" + "\t" + "thuong" + "\t" + "luongcb" + "\t" + "thanhtien");
+            Console.WriteLine("\t" + "matl" + "\t" + "songaylamviec" + "\t" + "thuong" + "\t\t" + "luongcb" + "\t\t" + "thanhtien");
             List<tinhluong> list = spDLL.GetAlltinhluong();
             foreach (var sp in list)
-                Console.WriteLine("\t" + sp.Matl + "\t" + sp.Songaylv + "\t" + sp.Thuong + "\t" + sp.Luongcoban+ "\t" + sp.Thanhtien );
+                Console.WriteLine("\t" + sp.Matl + "\t" + sp.Songaylv + "\t\t" + sp.Thuong + "\t\t" + sp.Luongcoban+ "\t\t" + sp.Thanhtien );
         }
         public void Sua()
         {

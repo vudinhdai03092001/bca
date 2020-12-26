@@ -28,10 +28,10 @@ namespace doann.presenation
         {
             Console.Clear();
             Console.WriteLine("                    HIEN THI THONG TIN NHA CUNG CAP ");
-            Console.WriteLine("\t" + "mancc" + "\t" + "tenncc" + "\t" + "diachi" + "\t" + "sđt" );
+            Console.WriteLine("\t" + "mancc" + "\t\t" + "tenncc" + "\t\t" + "diachi" + "\t\t" + "sđt" );
             List<NCC> list = spDLL.GetAllNCC();
             foreach (var sp in list)
-                Console.WriteLine("\t" + sp.Mancc + "\t" + sp.Tenncc + "\t" + sp.Diachi+ "\t" + sp.Sdt);
+                Console.WriteLine("\t" + sp.Mancc + "\t\t" + sp.Tenncc + "\t\t" + sp.Diachi+ "\t\t" + sp.Sdt);
         }
         public void Sua()
         {

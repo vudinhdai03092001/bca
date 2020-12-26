@@ -25,16 +25,16 @@ namespace doann.presenation
         public void Hien()
         {
             Console.Clear();
-            Console.WriteLine("                    HIEN THI THONG TIN HOA DON BAN");
-            Console.WriteLine("\t" + "mahdn" + "\t" + "nhanviengiao" + "\t" + "manhanviennhap"+"\t"+"ngaynhan"+"\t"+"gianhap");
+            Console.WriteLine("                    HIEN THI THONG TIN HOA DON NHAP");
+            Console.WriteLine("\t" + "mahdn" + "\t" + "nhanviengiao" + "\t" + "manhanviennhap"+"\t"+"ngaynhan"+"\t\t"+"gianhap");
             List<hoadonnhap> list = spDLL.GetAllhoadonnhap();
             foreach (var sp in list)
-                Console.WriteLine("\t" + sp.Mahdn + "\t" + sp.Nvgiao + "\t" + sp.Manvnhap+"\t" + sp.Ngaynhan + "\t" + sp.Gianhap);
+                Console.WriteLine("\t" + sp.Mahdn + "\t" + sp.Nvgiao + "\t\t" + sp.Manvnhap+"\t\t" + sp.Ngaynhan + "\t" + sp.Gianhap);
         }
         public void Sua()
         {
             Console.Clear();
-            Console.WriteLine("SUA THONG TIN HOA DON BAN");
+            Console.WriteLine("SUA THONG TIN HOA DON NHAP");
             List<hoadonnhap> list = spDLL.GetAllhoadonnhap();
             string ma;
             Console.Write("Nhap ma hoa don ban can sua:");
@@ -68,7 +68,7 @@ namespace doann.presenation
         public void xoa()
         {
             Console.Clear();
-            Console.WriteLine("XOA THONG TIN HOA DON BAN ");
+            Console.WriteLine("XOA THONG TIN HOA DON NHAP ");
             List<hoadonnhap> list = spDLL.GetAllhoadonnhap();
             string ma;
             Console.Write("Nhap ma hoa don ban can xoa:");
@@ -108,7 +108,7 @@ namespace doann.presenation
         public void timkiem()
         {
             Console.Clear();
-            Console.Write("Nhap ma hoa don ban can tim :");
+            Console.Write("Nhap ma hoa don  can tim :");
             string ma = Console.ReadLine();
             Console.WriteLine("                    HIEN THI THONG TIN TIM KIEM");
             Console.WriteLine("\t" + "mahdn" + "\t" + "nhanviengiao" + "\t" + "manhanviennhap" + "\t" + "ngaynhap "+ "\t" + "gianhap");

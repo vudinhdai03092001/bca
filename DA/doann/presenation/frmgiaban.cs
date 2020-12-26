@@ -28,7 +28,7 @@ namespace doann.presenation
             Console.WriteLine("\t" + "magiaban" + "\t\t" + "giá" + "\t\t" + "donvitinh");
             List<giaban> list = spDLL.GetAllgiaban();
             foreach (var sp in list)
-                Console.WriteLine("\t" + sp.Magiaban + "\t" + sp.Gia + "\t\t" + sp.Donvitinh);
+                Console.WriteLine("\t" + sp.Magiaban + "\t\t\t" + sp.Gia + "\t\t" + sp.Donvitinh);
         }
         public void Sua()
         {

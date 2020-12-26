@@ -75,15 +75,15 @@ namespace doann.presenation
                 case 'C':
                     Console.Clear();
                     nv.xoa(); break;
-                
+                case '^':
+                    Console.Clear();
+                    nv.timkiem();
+                    break;
                 case 'D':
                     Console.Clear();
                     nv.Hien();
                     Console.ReadKey(); break;
-                case '^':
-                    Console.Clear();
-                    nv.timkiem();
-                    Console.ReadKey(); break;
+                
                 ///
                 case 'E':
                     Console.Clear();
@@ -96,14 +96,15 @@ namespace doann.presenation
                 case 'H':
                     Console.Clear();
                     hh.xoa(); break;
+                case 'K':
+                    Console.Clear();
+                    hh.timkiem();
+                    break;
                 case 'I':
                     Console.Clear();
                     hh.Hien();
                     Console.ReadKey(); break;
-                case 'K':
-                    Console.Clear();
-                    hh.timkiem();
-                    Console.ReadKey();break;
+               
                     //
                 case 'N':
                     Console.Clear();
@@ -116,14 +117,15 @@ namespace doann.presenation
                 case 'P':
                     Console.Clear();
                     ncc.xoa(); break;
+                case 'Q':
+                    Console.Clear();
+                    ncc.timkiem();
+                    break;
                 case ':':
                     Console.Clear();
                     ncc.Hien();
                     Console.ReadKey(); break;
-                case 'Q':
-                    Console.Clear();
-                    ncc.timkiem();
-                    Console.ReadKey(); break;
+              
                //
                 case 'V':
                     Console.Clear();
@@ -136,18 +138,15 @@ namespace doann.presenation
                 case 'R':
                     Console.Clear();
                     gb.xoa(); break;
-                case 'T':
-                    Console.Clear();
-                    gb.Hien();
-                    Console.ReadKey(); break;
-                //case 'O':
-                //    Console.Clear();
-                //    gb.Hien();
-                //    Console.ReadKey(); break;
                 case 'U':
                     Console.Clear();
                     gb.timkiem();
                     break;
+                case 'T':
+                    Console.Clear();
+                    gb.Hien();
+                    Console.ReadKey(); break;
+                              
                     //
                 case 'Z':
                     Console.Clear();
@@ -159,15 +158,16 @@ namespace doann.presenation
                 case '@':
                     Console.Clear();
                     hdb.xoa();
-                    Console.ReadKey(); break;
-                case '(':
-                    Console.Clear();
-                    hdb.Hien();
-                    break;
+                     break;
                 case '#':
                     Console.Clear();
                     hdb.timkiem();
                     break;
+                case '(':
+                    Console.Clear();
+                    hdb.Hien();
+                    Console.ReadKey(); break;
+              
                     ///
                 case '$':
                     Console.Clear();
@@ -179,15 +179,16 @@ namespace doann.presenation
                 case '&':
                     Console.Clear();
                     hdn.xoa();
-                    Console.ReadKey(); break;
-                case ')':
-                    Console.Clear();
-                    hdn.Hien();
-                    break;
+                     break;
                 case '*':
                     Console.Clear();
                     hdn.timkiem();
                     break;
+                case ')':
+                    Console.Clear();
+                    hdn.Hien();
+                    Console.ReadKey(); break;
+               
                     ////
                 case '<':
                     Console.Clear();
@@ -199,15 +200,13 @@ namespace doann.presenation
                 case 'J':
                     Console.Clear();
                     tl.xoa();
-                    Console.ReadKey(); break;
-                case '+':
-                    Console.Clear();
-                    tl.Hien();
-                    break;
+                     break;
                 case '>':
                     Console.Clear();
-                    tl.timkiem();
-                                  
+                    tl.timkiem();break;
+                case '+':
+                    Console.Clear();
+                    tl.Hien();              
                  Console.ReadKey(); break;
 
             }
